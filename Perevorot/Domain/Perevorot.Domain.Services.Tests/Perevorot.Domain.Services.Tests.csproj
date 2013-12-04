@@ -55,11 +55,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Winner.Domain.Core\Perevorot.Domain.Core.csproj">
+    <ProjectReference Include="..\Perevorot.Domain.Core\Perevorot.Domain.Core.csproj">
       <Project>{d94e5068-1ea9-4308-a25f-ea03bdea0b67}</Project>
       <Name>Perevorot.Domain.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Winner.Domain.Services\Perevorot.Domain.Services.csproj">
+    <ProjectReference Include="..\Perevorot.Domain.Services\Perevorot.Domain.Services.csproj">
       <Project>{29c302ef-c081-46ba-814a-f41a8177dea1}</Project>
       <Name>Perevorot.Domain.Services</Name>
     </ProjectReference>
