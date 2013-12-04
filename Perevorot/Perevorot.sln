@@ -1,0 +1,78 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Domain", "2.Domain", "{24AF0032-695C-43A6-B7DD-C6C2E9154170}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Perevorot.Domain.Core", "Domain\Winner.Domain.Core\Perevorot.Domain.Core.csproj", "{D94E5068-1EA9-4308-A25F-EA03BDEA0B67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Perevorot.Domain.Models", "Domain\Winner.Domain.Models\Perevorot.Domain.Models.csproj", "{338FB84D-39E9-4223-BC52-E957EE98E371}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Perevorot.Domain.IServices", "Domain\Winner.Domain.IServices\Perevorot.Domain.IServices.csproj", "{0548F962-2D08-47DC-A4AA-4F91A543F221}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Perevorot.Domain.Services", "Domain\Winner.Domain.Services\Perevorot.Domain.Services.csproj", "{29C302EF-C081-46BA-814A-F41A8177DEA1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Presentation", "1.Presentation", "{9E0D2645-5428-45DB-BFA1-FD341B1D3C3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Perevorot.WebApi", "Presentation\Winner.WebApi\Perevorot.WebApi.csproj", "{DD115B21-80BC-4CCC-B519-448D34BEDAF7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{D83543E5-88DA-4304-AA64-1190B5830DD9}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Perevorot.Domain.Services.Tests", "Domain\Winner.Domain.Services.Tests\Perevorot.Domain.Services.Tests.csproj", "{7CEACD0D-3A56-46F5-9460-085C5D52EC53}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Tests", "3.Tests", "{0E23736D-80C2-4823-AF87-4EE8265099EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Perevorot.Domain.Core.Tests", "Tests\Perevorot.Domain.Core.Tests.csproj", "{689486EC-33B7-424D-85CD-A25E67111347}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D94E5068-1EA9-4308-A25F-EA03BDEA0B67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D94E5068-1EA9-4308-A25F-EA03BDEA0B67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D94E5068-1EA9-4308-A25F-EA03BDEA0B67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D94E5068-1EA9-4308-A25F-EA03BDEA0B67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{338FB84D-39E9-4223-BC52-E957EE98E371}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{338FB84D-39E9-4223-BC52-E957EE98E371}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{338FB84D-39E9-4223-BC52-E957EE98E371}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{338FB84D-39E9-4223-BC52-E957EE98E371}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0548F962-2D08-47DC-A4AA-4F91A543F221}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0548F962-2D08-47DC-A4AA-4F91A543F221}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0548F962-2D08-47DC-A4AA-4F91A543F221}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0548F962-2D08-47DC-A4AA-4F91A543F221}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29C302EF-C081-46BA-814A-F41A8177DEA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29C302EF-C081-46BA-814A-F41A8177DEA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29C302EF-C081-46BA-814A-F41A8177DEA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29C302EF-C081-46BA-814A-F41A8177DEA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD115B21-80BC-4CCC-B519-448D34BEDAF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD115B21-80BC-4CCC-B519-448D34BEDAF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD115B21-80BC-4CCC-B519-448D34BEDAF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD115B21-80BC-4CCC-B519-448D34BEDAF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CEACD0D-3A56-46F5-9460-085C5D52EC53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CEACD0D-3A56-46F5-9460-085C5D52EC53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CEACD0D-3A56-46F5-9460-085C5D52EC53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CEACD0D-3A56-46F5-9460-085C5D52EC53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{689486EC-33B7-424D-85CD-A25E67111347}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{689486EC-33B7-424D-85CD-A25E67111347}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{689486EC-33B7-424D-85CD-A25E67111347}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{689486EC-33B7-424D-85CD-A25E67111347}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D94E5068-1EA9-4308-A25F-EA03BDEA0B67} = {24AF0032-695C-43A6-B7DD-C6C2E9154170}
+		{338FB84D-39E9-4223-BC52-E957EE98E371} = {24AF0032-695C-43A6-B7DD-C6C2E9154170}
+		{0548F962-2D08-47DC-A4AA-4F91A543F221} = {24AF0032-695C-43A6-B7DD-C6C2E9154170}
+		{29C302EF-C081-46BA-814A-F41A8177DEA1} = {24AF0032-695C-43A6-B7DD-C6C2E9154170}
+		{DD115B21-80BC-4CCC-B519-448D34BEDAF7} = {9E0D2645-5428-45DB-BFA1-FD341B1D3C3D}
+		{7CEACD0D-3A56-46F5-9460-085C5D52EC53} = {0E23736D-80C2-4823-AF87-4EE8265099EC}
+		{689486EC-33B7-424D-85CD-A25E67111347} = {0E23736D-80C2-4823-AF87-4EE8265099EC}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,5 @@
+D:\perevorot\Perevorot\Domain\Winner.Domain.Models\bin\Debug\Winner.Domain.Models.dll
+D:\perevorot\Perevorot\Domain\Winner.Domain.Models\bin\Debug\Winner.Domain.Models.pdb
+D:\perevorot\Perevorot\Domain\Winner.Domain.Models\obj\Debug\Perevorot.Domain.Models.csprojResolveAssemblyReference.cache
+D:\perevorot\Perevorot\Domain\Winner.Domain.Models\obj\Debug\Winner.Domain.Models.dll
+D:\perevorot\Perevorot\Domain\Winner.Domain.Models\obj\Debug\Winner.Domain.Models.pdb
