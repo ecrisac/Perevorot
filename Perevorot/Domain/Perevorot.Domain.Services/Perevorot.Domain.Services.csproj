@@ -43,7 +43,7 @@
     <Compile Include="RuntimeCompiler.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Winner.Domain.Core\Perevorot.Domain.Core.csproj">
+    <ProjectReference Include="..\Perevorot.Domain.Core\Perevorot.Domain.Core.csproj">
       <Project>{d94e5068-1ea9-4308-a25f-ea03bdea0b67}</Project>
       <Name>Perevorot.Domain.Core</Name>
     </ProjectReference>
