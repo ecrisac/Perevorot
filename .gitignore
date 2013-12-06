@@ -1,5 +1,14 @@
 Perevorot/Presentation/Perevorot.Web/bin/
 Perevorot/Presentation/Perevorot.Web/obj/
+Perevorot/Domain/Perevorot.Domain.Core/obj/
+Perevorot/Domain/Perevorot.Domain.Core/bin/
+Perevorot/Domain/Perevorot.Domain.Model/obj/
+Perevorot/Domain/Perevorot.Domain.Model/bin/
+Perevorot/Domain/Perevorot.Domain.Services/obj/
+Perevorot/Domain/Perevorot.Domain.Services/bin/
+
 Perevorot/packages/
 Perevorot/Tests/obj/
+Perevorot/Tests/bin/
 Perevorot/Domain/Perevorot.Domain.Services.Tests/obj/
+Perevorot/Domain/Perevorot.Domain.Services.Tests/bin/
