@@ -39,20 +39,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CoreFightSimulator.cs" />
-    <Compile Include="Models\Bullet.cs" />
-    <Compile Include="Models\FightSimulationResult.cs" />
-    <Compile Include="Models\IBullet.cs" />
-    <Compile Include="Models\IRobot.cs" />
-    <Compile Include="Models\IRobotBehavior.cs" />
-    <Compile Include="Models\IRobotEvents.cs" />
-    <Compile Include="Models\IRobotFullInfo.cs" />
-    <Compile Include="Models\IRobotInfo.cs" />
-    <Compile Include="Models\IRobotHiddenBehavior.cs" />
-    <Compile Include="Models\Robot.cs" />
-    <Compile Include="Models\RobotFullInfo.cs" />
-    <Compile Include="Models\RobotInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
