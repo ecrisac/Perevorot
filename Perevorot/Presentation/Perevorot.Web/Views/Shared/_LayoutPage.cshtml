@@ -5,25 +5,18 @@
     <meta name="viewport" content="width=device-width" />
 
     <!-- Bootstrap -->
-    <link href="~/Content/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="~/Content/Site.css" rel="stylesheet" media="screen">
+    <link href="~/Content/Css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="~/Content/Css/Perevorot.css" rel="stylesheet" media="screen">
 
     <title>@ViewBag.Title</title>
 </head>
 <body>
-
-    <div id="header">
-        @RenderSection("Header", required: false);
-    </div>
-    <div id="sideBar">
-        @RenderSection("SideBar", required: false);
-    </div>
     <div id="content">
-        @RenderBody();
+        @RenderBody()
     </div>
-    <div id="footer">
-        @RenderSection("Footer", required: false);
-    </div>
+
+    WELCOME HOME!
+    
 
 </body>
 </html>

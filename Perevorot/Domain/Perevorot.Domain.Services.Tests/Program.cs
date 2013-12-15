@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Winner.Domain.Services.Tests
+namespace Perevorot.Domain.Services.Tests
 {
     class Program
     {
