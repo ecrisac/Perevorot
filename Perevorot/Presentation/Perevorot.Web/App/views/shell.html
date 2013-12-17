@@ -1,0 +1,52 @@
+﻿<div>   
+    <div class="container" >
+        <div class="header">
+            The Header
+        </div>
+
+        <div class="sidebar">
+            <ul data-bind="foreach: router.navigationModel">
+                <li data-bind="css: { active: isActive }">
+                    <a data-bind="attr: { href: hash }, html: title"></a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="page-host" data-bind="router: {transition: 'entrance', cacheViews: false }"></div>
+
+    </div>
+    <div class="footer">The Footer</div>
+</div>
+
+<style>
+    .container {
+        width: 80%;
+    }
+
+    .header {
+        background: black;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        height: 80px;
+        padding: 5px;
+    }
+
+    .sidebar {
+        width: 20%;
+        float: left;
+        color: blue;
+    }
+
+    .page-host {
+        width: 80%;
+        float: left;
+        min-height: 500px;
+    }
+
+    .footer {
+        text-align: center;
+        clear: both;
+    }
+    
+</style>
