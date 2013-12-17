@@ -1,7 +1,0 @@
-D:\perevorot\Perevorot\Tests\bin\Debug\Winner.Domain.Core.Tests.dll
-D:\perevorot\Perevorot\Tests\bin\Debug\Winner.Domain.Core.Tests.pdb
-D:\perevorot\Perevorot\Tests\bin\Debug\nunit.framework.dll
-D:\perevorot\Perevorot\Tests\bin\Debug\nunit.framework.xml
-D:\perevorot\Perevorot\Tests\obj\Debug\Perevorot.Domain.Core.Tests.csprojResolveAssemblyReference.cache
-D:\perevorot\Perevorot\Tests\obj\Debug\Winner.Domain.Core.Tests.dll
-D:\perevorot\Perevorot\Tests\obj\Debug\Winner.Domain.Core.Tests.pdb

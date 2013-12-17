@@ -2,12 +2,16 @@
 {
     using System.Web.Mvc;
 
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
+        public HomeController()
+        {
+        }
+
+        [HttpGet]
         public ActionResult Index()
         {
             return View("Index");
-
         }
 
     }

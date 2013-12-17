@@ -1,5 +1,0 @@
-D:\perevorot\Perevorot\Domain\Winner.Domain.IServices\bin\Debug\Winner.Domain.IServices.dll
-D:\perevorot\Perevorot\Domain\Winner.Domain.IServices\bin\Debug\Winner.Domain.IServices.pdb
-D:\perevorot\Perevorot\Domain\Winner.Domain.IServices\obj\Debug\Perevorot.Domain.IServices.csprojResolveAssemblyReference.cache
-D:\perevorot\Perevorot\Domain\Winner.Domain.IServices\obj\Debug\Winner.Domain.IServices.dll
-D:\perevorot\Perevorot\Domain\Winner.Domain.IServices\obj\Debug\Winner.Domain.IServices.pdb
