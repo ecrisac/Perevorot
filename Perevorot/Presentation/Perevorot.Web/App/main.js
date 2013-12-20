@@ -4,8 +4,10 @@
         'durandal': '../Scripts/durandal',
         'plugins': '../Scripts/durandal/plugins',
         'transitions': '../Scripts/durandal/transitions',
+        'jquery': '../Scripts/jquery-2.0.3.min',
+        'jquery-ui': '../Scripts/jquery-ui-1.10.3.min',
         'knockout': '../Scripts/knockout-3.0.0',
-        'jquery': '../Scripts/jquery-2.0.3.min'
+        'knockout-jqueryui': '../Scripts/knockout-jqueryui.min'
     }
 });
 
@@ -24,13 +26,19 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator'], function (sy
         dialog: true,
         widget: true
     });
+    
+    //Todo: Remove later to speed up loading
+    setTimeout(appStart, 500);
 
-    app.start().then(function () {
-        //Replace 'viewmodels' in the moduleId with 'views' to locate the view.
-        //Look for partial views in a 'views' folder in the root.
-        viewLocator.useConvention();
+    function appStart(parameters) {
+        app.start().then(function () {
+            //Replace 'viewmodels' in the moduleId with 'views' to locate the view.
+            //Look for partial views in a 'views' folder in the root.
+            viewLocator.useConvention();
 
-        //Show the app by setting the root view model for our application with a transition.
-        app.setRoot('viewmodels/shell', 'entrance');
-    });
+            //Show the app by setting the root view model for our application with a transition.
+            app.setRoot('viewmodels/shell', 'entrance');
+        });
+    }
+   
 });
