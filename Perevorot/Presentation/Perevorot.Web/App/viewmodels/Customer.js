@@ -4,18 +4,35 @@
         
         _self = this;
         
-        this.isOpen = ko.observable(false);
-        this.customerName = ko.observable('Lorem ipsum dolor sit amet.');
+        _self.isOpen = ko.observable(false);
+        _self.customerName = ko.observable();
         
-        this.OpenAddCustomerDialog = function () {
-            this.isOpen(true);
+        _self.OpenAddCustomerDialog = function () {
+            _self.isOpen(true);
         };
         
         this.SaveCustomer = function () {
-            console.log("sending data to server" + this.customerName());
-            var data = { CustomerName: this.customerName() };
-            jq.post("/Customer/Index", data, function(returnedData) {
-                alert(returnedData);
+            console.log("sending data to server" + this.customerName());    
+            jq.ajax({
+                url: "/Customer/AddNewCustomer",
+                type: 'POST',
+                cache: false,
+                contentType: 'application/json',
+                data: JSON.stringify({
+                    Name: _self.customerName()                
+                }),
+                success: function (returnedData) {
+                    if (returnedData.Result == "Success") {
+                        //cleanup and close window
+                        _self.customerName('');
+                        _self.isOpen(false);
+                    } else {
+                        alert(returnedData.Message);
+                    }
+                },
+                error: function (jqXHR, exception) {
+                    alert('Error happened while sending request:' + exception);
+                }
             });
         };
 

@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ICustomerRepository.cs" />
     <Compile Include="ILoginRepository.cs" />
     <Compile Include="IRepository.cs" />
     <Compile Include="ISession.cs" />
