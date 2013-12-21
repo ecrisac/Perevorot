@@ -1,8 +1,21 @@
 ﻿<section>
-    <div class="alert alert-success">
-        <h4>StupidTest</h4>     
+    <div class="well">
+        <input 
+            type='button'class="btn btn-sm btn-primary" 
+            data-bind="click: OpenAddCustomerDialog, disable: isOpen" value="Create New Customer"/>
+              
+        <div data-bind="dialog: {
+                                    isOpen: isOpen,
+                                    modal: true,
+                                    title: 'Add A Customer',
+                                    resizable: false }">            
+            <div class="form-group">
+                <label class="control-label" for="my-number">Customer Name:</label>                
+                <input id="my-number" class="form-control"  data-bind="value: customerName" type="text"/>
+            </div>    
+            <input 
+                type='button'class="btn btn-sm btn-primary btn-block" 
+                data-bind="click: SaveCustomer" value="Create Customer"/>
+        </div>
     </div>
-    <p>Counter: <span data-bind="text: counter"></span></p>
-    <input type='text' data-bind="value: counter"/>
-    <input type='button' class="btn" data-bind="click: createNewCustomer" value="Create New Customer"/>
 </section>

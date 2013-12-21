@@ -11,14 +11,22 @@
     border: solid 5px black
 }
 
+.clear {
+    clear: both;
+}
+ 
+
+#application-preloader {
+    width: 100%;
+    height: 200px;     
+}
+
 
 /*Login Page Styles*/
 #logo_Div {
     position: absolute;
     float: left;  
 }
-
-
 
 .form-signin {
   max-width: 330px;
