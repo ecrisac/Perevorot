@@ -12,9 +12,9 @@
 //define('jquery', function () { return jQuery; });
 //define('knockout', ko);
 
-define(['durandal/system', 'durandal/app', 'durandal/viewLocator'], function (system, app, viewLocator) {
+define(['durandal/app', 'durandal/viewLocator'], function (app, viewLocator) {
     //>>excludeStart("build", true);
-    system.debug(true);
+    //system.debug(true);
     //>>excludeEnd("build");
 
     app.title = 'Durandal Starter Kit';

@@ -9,6 +9,13 @@
     <link href="~/Content/Css/Perevorot.css" rel="stylesheet" media="screen">
 
     <title>@ViewBag.Title</title>
+    <script type="text/javascript" language="javascript">
+        $(document).ajaxStart(function () {
+            $("#loading").show();
+        }).ajaxStop(function () {
+            $("#loading").hide();
+        });
+    </script>
 </head>
 <body>
     <div id="content">
@@ -16,7 +23,5 @@
     </div>
 
     WELCOME HOME!
-    
-
 </body>
 </html>

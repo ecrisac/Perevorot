@@ -1,4 +1,5 @@
-﻿using Perevorot.Domain.IRepositories;
+﻿using System;
+using Perevorot.Domain.IRepositories;
 using Perevorot.Domain.IServices.DomainInterfaces;
 using Perevorot.Domain.Models.DomainEntities;
 using Perevorot.Domain.Models.Exceptions;
@@ -22,8 +23,11 @@ namespace Perevorot.Domain.Services
             if (user.Password != password)
                 throw new FailedLoginException("Wrong password.");
 
+            user.LastLogin = DateTime.Now;
+            _loginRepository.Save(user);
             return user;
         }
+        
 
         public LoginService(ILoginRepository loginRepository)
         {

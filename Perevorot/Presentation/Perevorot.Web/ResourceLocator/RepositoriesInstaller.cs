@@ -11,7 +11,7 @@ namespace Perevorot.Web.ResourceLocator
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
             container.Register(Classes.FromAssemblyContaining<LoginRepository>()
-                                      .BasedOn(typeof (IRepository))
+                                      .BasedOn(typeof (IRepository<>))
                                       .WithService.AllInterfaces()
                                       .LifestyleTransient());
         }

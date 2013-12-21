@@ -1,9 +1,9 @@
-﻿using System.Data.Entity;
+﻿using Perevorot.Domain.Models.DomainEntities;
 
 namespace Perevorot.Domain.IRepositories
 {
-    public interface IRepository
+    public interface IRepository<T>
     {
-        DbContext GetSession();
+        void Save(User user);
     }
 }

@@ -147,6 +147,7 @@
     <Content Include="Content\Css\bootstrap.min.css" />
     <Content Include="Content\Css\durandal.css" />
     <Content Include="Content\Css\Perevorot.css" />
+    <Content Include="Content\Img\ajax-loader.gif" />
     <Content Include="Content\Img\Perevorot.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
