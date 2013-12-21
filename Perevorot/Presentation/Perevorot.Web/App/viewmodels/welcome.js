@@ -1,6 +1,6 @@
-﻿define(function () {
+﻿define(['i18next'], function (i18n) {
     var ctor = function () {
-        this.displayName = 'Welcome to the Durandal Starter Kit!';
+        this.displayName = i18n.t('welcome:welcomeMessage');
         this.description = 'Durandal is a cross-device, cross-platform client framework written in JavaScript and designed to make Single Page Applications (SPAs) easy to create and maintain.';
         this.features = [
             'Clean MV* Architecture',

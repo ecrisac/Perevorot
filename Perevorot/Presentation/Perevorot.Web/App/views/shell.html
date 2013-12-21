@@ -1,7 +1,10 @@
 ﻿<div>   
     <div class="container" >
-        <div class="header">
-            The Header
+        <div class="header" >
+            <div data-i18n="shell:header"></div>
+            <div data-bind="foreach: languages">
+                <a href="#" data-bind="text: $data, click: $parent.changeLanguage"></a>&nbsp;
+            </div>  
         </div>
 
         <div class="sidebar">
