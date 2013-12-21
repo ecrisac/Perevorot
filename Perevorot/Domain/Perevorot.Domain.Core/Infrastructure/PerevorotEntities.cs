@@ -1,10 +1,11 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using Perevorot.Domain.IRepositories;
 using Perevorot.Domain.Models.DomainEntities;
 
 namespace Perevorot.Domain.Core.Infrastructure
 {
-    public class PerevorotEntities : DbContext
+    public class PerevorotEntities : DbContext //, IDbContext
     {
         public PerevorotEntities()
             : base("name=PerevorotEntities")
@@ -15,6 +16,7 @@ namespace Perevorot.Domain.Core.Infrastructure
         public DbSet<User> Users { get; set; }
         public DbSet<UserGroup> UserGroups { get; set; }
         public DbSet<AccessRight> AccessRights { get; set; }
+        public DbSet<Customer> Customers { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

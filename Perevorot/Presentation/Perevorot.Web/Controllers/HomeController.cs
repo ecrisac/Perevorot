@@ -4,15 +4,12 @@
 
     public class HomeController : BaseController
     {
-        public HomeController()
-        {
-        }
-
         [HttpGet]
         public ActionResult Index()
         {
-            return View("Index");
+            return View("Login");
         }
+        
 
     }
 }

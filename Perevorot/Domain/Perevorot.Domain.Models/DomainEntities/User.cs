@@ -10,6 +10,8 @@ namespace Perevorot.Domain.Models.DomainEntities
         //navigation
         public ICollection<UserGroup> UserGroups { get; private set; }
 
+        public DateTime LastLogin { get; set; }
+
         public User(string userName, string password)
             : base(userName, password)
         {
@@ -23,4 +25,6 @@ namespace Perevorot.Domain.Models.DomainEntities
         }
 
     }
+
+   
 }

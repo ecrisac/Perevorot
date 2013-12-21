@@ -3,11 +3,11 @@ var Login = Perevorot.Login || {};
 
 
 var Login = (function () {
-    
+
     $(document).ready(function () {
         init();
     });
-    
+
     var submitForm = function (callback) {
         var actionUrl = $("#loginForm").attr('action');
         $.ajax({
@@ -28,16 +28,21 @@ var Login = (function () {
             $('#result').show();
             $('#result').html(data.Message);
         }
-        
+
     };
 
     function init() {
 
         $('#result').hide();
-        
-        $('#login_submit').first('button').click(function() {
+
+        $('#login_submit').first('button').click(function () {
             submitForm(showUserDataValidationResult);
         });
 
+        $(document).ajaxStart(function () {
+            $("#loading").show();
+        }).ajaxStop(function () {
+            $("#loading").hide();
+        });
     }
 })();

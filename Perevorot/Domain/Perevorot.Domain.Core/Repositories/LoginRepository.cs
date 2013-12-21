@@ -1,6 +1,4 @@
-﻿
-using System.Linq;
-using Perevorot.Domain.Core.Infrastructure;
+﻿using System.Linq;
 using Perevorot.Domain.IRepositories;
 using Perevorot.Domain.Models.DomainEntities;
 
@@ -10,12 +8,16 @@ namespace Perevorot.Domain.Core.Repositories
     {
         public User GetUserByUserNameAndPassword(string username, string password)
         {
-            var perevorotContext = GetSession() as PerevorotEntities;
-            var result = from u in perevorotContext.Users
+            var result = from u in Session.Users
                          where u.UserName == username 
                              select u;
-
             return result.FirstOrDefault();
+        }
+
+        public void Save(User user)
+        {
+            Session.Users.Attach(user);
+            Session.SaveChanges();
         }
     }
 }

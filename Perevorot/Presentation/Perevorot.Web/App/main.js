@@ -15,10 +15,10 @@
 //define('jquery', function () { return jQuery; });
 //define('knockout', ko);
 
-define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'durandal/binder', 'durandal/activator', 'i18next'],
-    function (system, app, viewLocator, binder, activator, i18n) {
+define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'durandal/binder', 'i18next'],
+    function (system, app, viewLocator, binder, i18n) {
     //>>excludeStart("build", true);
-    system.debug(true);
+    //system.debug(true);
     //>>excludeEnd("build");
 
     app.title = 'Durandal Starter Kit';

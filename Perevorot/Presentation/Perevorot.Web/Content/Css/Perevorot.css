@@ -65,10 +65,11 @@
 }
 
 /*!Login Page Styles*/
-
-
-
-/*Customer Page Styles*/
-
-
-/*!Customer Page Styles*/
+#loading {
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    margin: -20px 0 0 -20px;
+    top: 50%;
+    left: 50%;
+}

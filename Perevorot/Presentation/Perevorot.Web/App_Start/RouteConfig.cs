@@ -11,12 +11,11 @@ namespace Perevorot.Web
 
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            //TODO: Remove wrong route, the application should go by default to the Login Page.
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new {controller = "Home", action = "Index", id = UrlParameter.Optional}
-                );
+            //routes.MapRoute(
+            //    name: "Default",
+            //    url: "{controller}/{action}/{id}",
+            //    defaults: new {controller = "Home", action = "Index", id = UrlParameter.Optional}
+            //    );
 
             routes.MapRoute(
                 name: "Login",

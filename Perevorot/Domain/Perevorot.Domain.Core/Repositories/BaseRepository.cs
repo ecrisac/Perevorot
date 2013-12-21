@@ -1,15 +1,25 @@
-﻿
-using System.Data.Entity;
+﻿using System;
 using Perevorot.Domain.Core.Infrastructure;
-using Perevorot.Domain.IRepositories;
 
 namespace Perevorot.Domain.Core.Repositories
 {
-    public abstract class Repository : IRepository
-    {       
-        public DbContext GetSession()
+    public abstract class Repository : IDisposable
+    {
+        private readonly PerevorotEntities _session;
+
+        protected Repository()
         {
-            return new PerevorotEntities();
+            _session = new PerevorotEntities();
+        }
+
+        protected PerevorotEntities Session
+        {
+            get { return _session; }
+        }
+
+        public void Dispose()
+        {
+            Session.Dispose();
         }
     }
 }
