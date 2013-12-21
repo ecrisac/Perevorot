@@ -27,7 +27,7 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator'], function (sy
         widget: true
     });
     
-    //Todo: Remove later to speed up loading
+    //TODO: Remove later to speed up loading
     setTimeout(appStart, 500);
 
     function appStart(parameters) {

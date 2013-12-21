@@ -1,4 +1,4 @@
-﻿define(['durandal/app', 'knockout', 'knockout-jqueryui'], function (app, ko) {
+﻿define(['durandal/app', 'knockout', 'jquery','knockout-jqueryui'], function (app, ko, jq) {
     var _self;
     var addCustomer = function () {
         
@@ -13,6 +13,10 @@
         
         this.SaveCustomer = function () {
             console.log("sending data to server" + this.customerName());
+            var data = { CustomerName: this.customerName() };
+            jq.post("/Customer/Index", data, function(returnedData) {
+                alert(returnedData);
+            });
         };
 
     };
