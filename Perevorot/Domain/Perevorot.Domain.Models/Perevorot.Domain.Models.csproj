@@ -57,6 +57,7 @@
     <Compile Include="DomainEntities\AbstractUser.cs" />
     <Compile Include="DomainEntities\AccessRight.cs" />
     <Compile Include="DomainEntities\Customer.cs" />
+    <Compile Include="DomainEntities\PerevorotEntity.cs" />
     <Compile Include="DomainEntities\User.cs" />
     <Compile Include="DomainEntities\UserGroup.cs" />
     <Compile Include="Enums\AccessRightType.cs" />

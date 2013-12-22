@@ -2,7 +2,7 @@
 
 namespace Perevorot.Domain.Models.DomainEntities
 {
-    public class Customer
+    public class Customer : PerevorotEntity
     {
         public Customer(string name)
         {
@@ -13,8 +13,6 @@ namespace Perevorot.Domain.Models.DomainEntities
         public Customer()
         {
         }
-
-        public long Id { get; private set; }
 
         public String Name { get; private set; }
     }

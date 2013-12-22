@@ -58,16 +58,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Infrastructure\DatabaseInitializer.cs" />
+    <Compile Include="Infrastructure\IRepository.cs" />
+    <Compile Include="Infrastructure\IUnitOfWork.cs" />
+    <Compile Include="Infrastructure\IUnitOfWorkFactory.cs" />
     <Compile Include="Infrastructure\PerevorotEntities.cs" />
+    <Compile Include="Infrastructure\UnitOfWork.cs" />
+    <Compile Include="Infrastructure\UnitOfWorkFactory.cs" />
     <Compile Include="Migrations\201312211502138_AddedCustomers.cs" />
     <Compile Include="Migrations\201312211502138_AddedCustomers.Designer.cs">
       <DependentUpon>201312211502138_AddedCustomers.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\BaseRepository.cs" />
-    <Compile Include="Repositories\CustomerRepository.cs" />
-    <Compile Include="Repositories\LoginRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201312211502138_AddedCustomers.resx">
@@ -81,10 +83,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Perevorot.Domain.IRepositories\Perevorot.Domain.IRepositories.csproj">
-      <Project>{AB6C555F-52FA-4D72-B351-90C00978E864}</Project>
-      <Name>Perevorot.Domain.IRepositories</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Perevorot.Domain.Models\Perevorot.Domain.Models.csproj">
       <Project>{338FB84D-39E9-4223-BC52-E957EE98E371}</Project>
       <Name>Perevorot.Domain.Models</Name>

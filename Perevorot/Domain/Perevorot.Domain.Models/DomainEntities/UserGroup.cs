@@ -3,15 +3,12 @@ using System.Collections.ObjectModel;
 
 namespace Perevorot.Domain.Models.DomainEntities
 {
-    public class UserGroup
+    public class UserGroup : PerevorotEntity
     {
         public UserGroup(string name)
         {
             Name = name;
         }
-
-        public long Id { get; private set; }
-
 
         public string Name { get; set; }
 

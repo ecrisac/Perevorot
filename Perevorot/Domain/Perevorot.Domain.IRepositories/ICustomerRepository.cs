@@ -1,4 +1,6 @@
-﻿namespace Perevorot.Domain.IRepositories
+﻿using Perevorot.Domain.Core.Infrastructure;
+
+namespace Perevorot.Domain.IRepositories
 {
     public interface ICustomerRepository : IRepository
     {

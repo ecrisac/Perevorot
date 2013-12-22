@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Perevorot.Domain.Models.DomainEntities
 {
-    public abstract class AbstractUser
+    public abstract class AbstractUser : PerevorotEntity
     {
         [Key]
         public string UserName { get; set; }
