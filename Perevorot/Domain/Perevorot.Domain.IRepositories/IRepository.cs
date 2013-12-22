@@ -4,6 +4,6 @@ namespace Perevorot.Domain.IRepositories
 {
     public interface IRepository<T>
     {
-        void Save(User user);
+        void Save(T entity);
     }
 }

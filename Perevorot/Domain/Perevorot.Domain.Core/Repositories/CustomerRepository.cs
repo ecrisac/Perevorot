@@ -10,7 +10,7 @@ namespace Perevorot.Domain.Core.Repositories
     {
         public User GetUserByUserNameAndPassword(string username, string password)
         {
-            var perevorotContext = GetSession() as PerevorotEntities;
+            var perevorotContext = Session;
             var result = from u in perevorotContext.Users
                          where u.UserName == username 
                              select u;
@@ -20,13 +20,18 @@ namespace Perevorot.Domain.Core.Repositories
 
         public void AddNewCustomer(string name)
         {
-            var perevorotContext = GetSession() as PerevorotEntities;
+            var perevorotContext = Session;
             var newCustomer = new Customer(name);
             perevorotContext.Customers.Add(newCustomer);
 
             perevorotContext.SaveChanges();
 
 
+        }
+
+        public void Save(Customer user)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

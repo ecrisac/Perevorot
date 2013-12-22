@@ -7,7 +7,7 @@
         [HttpGet]
         public ActionResult Index()
         {
-            return View("Login");
+            return View("Index");
         }
         
 
