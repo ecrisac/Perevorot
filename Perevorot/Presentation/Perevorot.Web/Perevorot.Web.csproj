@@ -373,13 +373,13 @@
       <Project>{338FB84D-39E9-4223-BC52-E957EE98E371}</Project>
       <Name>Perevorot.Domain.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Domain\Perevorot.Domain.Repositories\Perevorot.Domain.Repositories.csproj">
+      <Project>{61B6A36A-79E5-4D8F-B272-CAD47FDD4B56}</Project>
+      <Name>Perevorot.Domain.Repositories</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Domain\Perevorot.Domain.Services\Perevorot.Domain.Services.csproj">
       <Project>{29c302ef-c081-46ba-814a-f41a8177dea1}</Project>
       <Name>Perevorot.Domain.Services</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Perevorot.Domain.Repositories\Perevorot.Domain.Repositories.csproj">
-      <Project>{61B6A36A-79E5-4D8F-B272-CAD47FDD4B56}</Project>
-      <Name>Perevorot.Domain.Repositories</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

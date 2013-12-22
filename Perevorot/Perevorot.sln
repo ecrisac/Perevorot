@@ -30,7 +30,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Perevorot.Web", "Presentati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Perevorot.Domain.IRepositories", "Domain\Perevorot.Domain.IRepositories\Perevorot.Domain.IRepositories.csproj", "{AB6C555F-52FA-4D72-B351-90C00978E864}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Perevorot.Domain.Repositories", "Perevorot.Domain.Repositories\Perevorot.Domain.Repositories.csproj", "{61B6A36A-79E5-4D8F-B272-CAD47FDD4B56}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Perevorot.Domain.Repositories", "Domain\Perevorot.Domain.Repositories\Perevorot.Domain.Repositories.csproj", "{61B6A36A-79E5-4D8F-B272-CAD47FDD4B56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
