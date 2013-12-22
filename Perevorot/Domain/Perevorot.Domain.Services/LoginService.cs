@@ -10,28 +10,31 @@ namespace Perevorot.Domain.Services
     {
         private readonly ILoginRepository _loginRepository;
 
-        public User GetUserByLoginData(string username, string password)
-        {
-            User user = _loginRepository.GetUserByUserNameAndPassword(username, password);
-
-            if (user == null)
-                throw new FailedLoginException("User not found.");
-
-            if (!user.IsActive)
-                throw new FailedLoginException("User is disabled.");
-            
-            if (user.Password != password)
-                throw new FailedLoginException("Wrong password.");
-
-            user.LastLogin = DateTime.Now;
-            _loginRepository.Save(user);
-            return user;
-        }
-        
 
         public LoginService(ILoginRepository loginRepository)
         {
             _loginRepository = loginRepository;
+        }
+
+        public User GetUserByLoginData(string username, string password)
+        {
+            using (_loginRepository.CreateUnitOfWork())
+            {
+                var user = _loginRepository.GetUserByUserNameAndPassword(username, password);
+
+                if (user == null)
+                    throw new FailedLoginException("User not found.");
+
+                if (!user.IsActive)
+                    throw new FailedLoginException("User is disabled.");
+
+                if (user.Password != password)
+                    throw new FailedLoginException("Wrong password.");
+
+                user.LastLogin = DateTime.Now;
+                _loginRepository.SaveOrUpdate(user);
+                return user;
+            }
         }
     }
 }

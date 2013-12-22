@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Perevorot.Domain.Core.Infrastructure;
 using Perevorot.Domain.IRepositories;
 using Perevorot.Domain.IServices.DomainInterfaces;
 
@@ -16,7 +16,11 @@ namespace Perevorot.Domain.Services
 
         public void AddNewCustomer(string name)
         {
-            _customerRepository.AddNewCustomer(name);
+            using (IUnitOfWork uow = _customerRepository.CreateUnitOfWork())
+            {
+                _customerRepository.AddNewCustomer(name);
+                uow.Commit();
+            }
         }
     }
 }

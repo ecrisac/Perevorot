@@ -8,7 +8,7 @@ namespace Perevorot.Domain.Models.DomainEntities
         public bool IsActive { get; set; }
 
         //navigation
-        public ICollection<UserGroup> UserGroups { get; private set; }
+        public virtual ICollection<UserGroup> UserGroups { get; private set; }
 
         public DateTime LastLogin { get; set; }
 
@@ -16,6 +16,7 @@ namespace Perevorot.Domain.Models.DomainEntities
             : base(userName, password)
         {
             IsActive = true;
+            LastLogin = DateTime.Now;
         }
 
         [Obsolete("EF Ctor only!")]

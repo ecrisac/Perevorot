@@ -1,5 +1,6 @@
 using System.Data.Entity.Migrations;
 using Perevorot.Domain.Core.Infrastructure;
+using Perevorot.Domain.Models.DomainEntities;
 
 namespace Perevorot.Domain.Core.Migrations
 {
@@ -13,18 +14,7 @@ namespace Perevorot.Domain.Core.Migrations
 
         protected override void Seed(PerevorotEntities context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            context.Users.Add(new User("test", "password"));
         }
     }
 }
