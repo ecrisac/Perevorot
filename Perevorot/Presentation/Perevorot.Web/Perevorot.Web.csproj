@@ -154,8 +154,7 @@
     <Content Include="Content\Css\durandal.css" />
     <Content Include="Content\Css\Perevorot.css" />
     <Content Include="Content\Css\Preloader.css" />
-    <Content Include="Content\Img\ajax-loader.gif" />
-    <Content Include="Content\Img\Perevorot.png" />
+    <Content Include="Content\images\icon_loading.gif" />
     <Content Include="Content\durandal.css" />
     <Content Include="Content\images\icon.png" />
     <Content Include="Content\images\ios-startup-image-landscape.png" />

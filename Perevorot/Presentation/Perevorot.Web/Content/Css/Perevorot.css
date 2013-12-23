@@ -1,75 +1,80 @@
 ﻿body {
+    background-color: #eee;
     padding: 10px;
-    padding-top: 40px;
     padding-bottom: 40px;
-    background-color:#eee;
-}
-#header {
-    background-color: royalblue;
-}
-#sideBar {
-    border: solid 5px black
+    padding-top: 40px;
 }
 
-.clear {
-    clear: both;
-}
+#header { background-color: royalblue; }
+
+#sideBar { border: solid 5px black }
+
+.clear { clear: both; }
  
 
 #application-preloader {
+    height: 200px;
     width: 100%;
-    height: 200px;     
 }
 
 
 /*Login Page Styles*/
+
 #logo_Div {
+    float: left;
     position: absolute;
-    float: left;  
 }
 
 .form-signin {
-  max-width: 330px;
-  padding: 15px;
-  margin: 0 auto;
+    margin: 0 auto;
+    max-width: 330px;
+    padding: 15px;
 }
 
 .form-signin .form-signin-heading,
-.form-signin {
-  margin-bottom: 10px;
-}
-.form-signin {
-  font-weight: normal;
-}
+.form-signin { margin-bottom: 10px; }
+
+.form-signin { font-weight: normal; }
+
 .form-signin .form-control {
-  position: relative;
-  font-size: 16px;
-  height: auto;
-  padding: 10px;
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    position: relative;
 }
-.form-signin .form-control:focus {
-  z-index: 2;
-}
+
+.form-signin .form-control:focus { z-index: 2; }
+
 .form-signin input[type="text"] {
-  margin-bottom: -1px;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: -1px;
 }
+
 .form-signin input[type="password"] {
-  margin-bottom: 10px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-bottom: 10px;
 }
 
 /*!Login Page Styles*/
-#loading {
+.loader {
     position: absolute;
-    height: 40px;
-    width: 40px;
-    margin: -20px 0 0 -20px;
-    top: 50%;
-    left: 50%;
+    left: 45%;
+    top: 45%;
+}
+
+#loading {
+    left: 0;
+    top: 0;
+    z-index: 1000000;
+    background: black;
+    height: 100%;
+    width: 100%;
+    opacity: 0.1;
+    position: absolute;
+    display: none;  
 }
