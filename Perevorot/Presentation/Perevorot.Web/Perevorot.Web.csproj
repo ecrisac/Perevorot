@@ -138,6 +138,10 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="App\locales\dev\shell.txt" />
+    <Content Include="App\locales\dev\welcome.txt" />
+    <Content Include="App\locales\ru\shell.txt" />
+    <Content Include="App\locales\ru\welcome.txt" />
     <Content Include="App\main.js" />
     <Content Include="App\viewmodels\Customer.js" />
     <Content Include="App\viewmodels\perevorot.js" />
@@ -154,11 +158,7 @@
     <Content Include="Content\Css\durandal.css" />
     <Content Include="Content\Css\Perevorot.css" />
     <Content Include="Content\Css\Preloader.css" />
-    <Content Include="Content\images\icon_loading.gif" />
     <Content Include="Content\durandal.css" />
-    <Content Include="Content\images\icon.png" />
-    <Content Include="Content\images\ios-startup-image-landscape.png" />
-    <Content Include="Content\images\ios-startup-image-portrait.png" />
     <Content Include="Content\Css\themes\base\images\animated-overlay.gif" />
     <Content Include="Content\Css\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\Css\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -222,9 +222,6 @@
     <Content Include="Content\Css\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Content\Css\themes\base\minified\jquery.ui.tooltip.min.css" />
     <Content Include="Content\durandal.css" />
-    <Content Include="Content\images\icon.png" />
-    <Content Include="Content\images\ios-startup-image-landscape.png" />
-    <Content Include="Content\images\ios-startup-image-portrait.png" />
     <Content Include="Content\Css\themes\base\images\animated-overlay.gif" />
     <Content Include="Content\Css\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\Css\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -287,6 +284,9 @@
     <Content Include="Content\Css\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\Css\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Content\Css\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="Content\images\icon.png" />
+    <Content Include="Content\images\ios-startup-image-landscape.png" />
+    <Content Include="Content\images\ios-startup-image-portrait.png" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

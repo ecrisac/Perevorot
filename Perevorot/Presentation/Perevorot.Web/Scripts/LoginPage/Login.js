@@ -15,7 +15,7 @@ var Login = (function () {
             url: actionUrl,
             data: $("#loginForm").serialize(), // serializes the form's elements.
             success: function (data) {
-                callback(data); // show response from the php script.
+                callback(data);
             }
         });
     };

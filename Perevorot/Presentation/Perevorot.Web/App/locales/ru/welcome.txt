@@ -1,0 +1,3 @@
+﻿{
+	"welcomeMessage": "Zdorova"
+}

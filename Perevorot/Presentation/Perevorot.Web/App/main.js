@@ -38,7 +38,7 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'durandal/bin
             namespaces: ['shell', 'welcome'],
             defaultNs: 'shell'
         },
-        resGetPath: 'App/locales/__lng__/__ns__.txt',
+        resGetPath: '../App/locales/__lng__/__ns__.txt',
         useCookie: true,
         cookieName: 'lang',
         getAsync: false // prevents translations being done before resources are loaded
@@ -49,7 +49,7 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'durandal/bin
 
             i18n.init(i18NOptions, function () {
 
-                //Call localization on view before binding...
+                //Call localization on view before binding.
                 binder.binding = function (obj, view) {
                     $(view).i18n();
                 };
