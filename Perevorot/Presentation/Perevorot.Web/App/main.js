@@ -33,12 +33,12 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'durandal/bin
     setTimeout(appStart, 500);
 
     var i18NOptions = {
-        fallbackLang: 'en',
+        fallbackLng: 'en',
         ns: {
             namespaces: ['shell', 'welcome'],
             defaultNs: 'shell'
         },
-        resGetPath: '../App/locales/__lng__/__ns__.txt',
+        resGetPath: '/App/locales/__lng__/__ns__.txt',
         useCookie: true,
         cookieName: 'lang',
         getAsync: false // prevents translations being done before resources are loaded
