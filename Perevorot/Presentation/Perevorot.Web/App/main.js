@@ -8,7 +8,9 @@
         'jquery-ui': '../Scripts/jquery-ui-1.10.3.min',
         'knockout': '../Scripts/knockout-3.0.0',
         'knockout-jqueryui': '../Scripts/knockout-jqueryui.min',
-        'i18next': '../Scripts/i18next.amd.withJQuery-1.7.1.min'
+        'i18next': '../Scripts/i18next.amd.withJQuery-1.7.1.min',
+        'datatables': '../Scripts/DataTables-1.9.4/jquery.dataTables',
+        'datatablesknockout': '../Scripts/DataTables-1.9.4/knockout-datatables'
     }
 });
 
@@ -16,12 +18,14 @@
 //define('knockout', ko);
 
 define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'durandal/binder', 'i18next'],
+// ReSharper disable InconsistentNaming
     function (system, app, viewLocator, binder, i18n) {
+// ReSharper restore InconsistentNaming
     //>>excludeStart("build", true);
     //system.debug(true);
     //>>excludeEnd("build");
 
-    app.title = 'Durandal Starter Kit';
+    app.title = 'Perevorot';
 
     app.configurePlugins({
         router: true,
