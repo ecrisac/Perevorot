@@ -34,5 +34,11 @@ namespace Perevorot.Web.Controllers
             return Json(new { Result = "Success" });
         }
 
+        [HttpPost]
+        public JsonResult GetCustomers(CustomerModel customer)
+        {
+            return Json(new { FirstName = "Elvis", NumberOfCompletedFields = 15, CallsRegistered = 5, HasDetails=1 });
+        }
+
     }
 }
