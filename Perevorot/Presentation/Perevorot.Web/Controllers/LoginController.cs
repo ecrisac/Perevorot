@@ -1,45 +1,72 @@
-﻿using System;
+﻿using System.Web.Mvc;
+using System.Web.Security;
 using Perevorot.Domain.IServices.DomainInterfaces;
-using Perevorot.Domain.Models.Exceptions;
-using Perevorot.Web.Models;
 using Perevorot.Domain.Models.DomainEntities;
+using Perevorot.Web.Filters;
+using Perevorot.Web.Models;
+using WebMatrix.WebData;
 
 namespace Perevorot.Web.Controllers
 {
-    using System.Web.Mvc;
-
+    [InitializeSimpleMembership]
     public class LoginController : BaseController
     {
         private readonly ILoginService _loginService;
+
+        public LoginController(ILoginService loginService)
+        {
+            _loginService = loginService;
+        }
 
         [HttpGet]
         public ActionResult Get()
         {
             return View("Login");
         }
+        [HttpPost]
+        public ActionResult LogOff()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Login", "Account");
+        }
 
         [HttpPost]
-        public JsonResult Login(LoginModel loginModel)
+        public ActionResult Register(RegisterModel model)
         {
-            try
+            if (ModelState.IsValid)
             {
-                var user = _loginService.GetUserByLoginData(
-                              loginModel.UserName, loginModel.Password);
-            }
-            catch (FailedLoginException e)
-            {
-                return Json(new {Result="Fail", Message = e.Message});
+                MembershipCreateStatus createStatus;
+                Membership.CreateUser(model.UserName, model.Password, model.Email, passwordQuestion: null, passwordAnswer: null, isApproved: true, providerUserKey: null, status: out createStatus);
+
+                if (createStatus == MembershipCreateStatus.Success)
+                {
+                    FormsAuthentication.SetAuthCookie(model.UserName, false);
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Ошибка при регистрации");
+                }
             }
 
-            Session.Add("User", loginModel.UserName);
-
-            return Json(new { Result = "Success" });
+            return View(model);
         }
 
-        public LoginController(ILoginService loginService)
+       
+        [HttpPost]
+        public JsonResult Login(LoginViewModel loginModel)
         {
-            _loginService = loginService;
+            if (ModelState.IsValid &&
+                WebSecurity.Login(loginModel.UserName, loginModel.Password, persistCookie: loginModel.RememberMe))
+            {
+                Session.Add("User", loginModel.UserName);
+
+                return Json(new { Result = "Success" });
+            }
             
+            return Json(new { Result = "Fail", Message = "Invalid user login" });
         }
+        
+        
     }
 }

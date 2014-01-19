@@ -12,8 +12,6 @@
     }
 });
 
-//define('jquery', function () { return jQuery; });
-//define('knockout', ko);
 
 define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'durandal/binder', 'i18next'],
     function (system, app, viewLocator, binder, i18n) {

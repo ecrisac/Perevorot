@@ -10,16 +10,10 @@ var Login = (function () {
 
     var submitForm = function (callback) {
         var actionUrl = $("#loginForm").attr('action');
-        $.ajax({
-            type: "POST",
-            url: actionUrl,
-            data: $("#loginForm").serialize(), // serializes the form's elements.
-            success: function (data) {
-                callback(data);
-            }
-        });
+        $.post(actionUrl,$("#loginForm").serialize(),
+               function (data) { callback(data);});
     };
-
+    
     var showUserDataValidationResult = function (data) {
         if (data.Result == "Success") {
             $('#result').empty();
