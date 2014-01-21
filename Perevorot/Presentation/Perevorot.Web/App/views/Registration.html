@@ -1,0 +1,25 @@
+﻿<section>
+    <div class="well">
+        <input 
+            type='button'class="btn btn-sm btn-primary" 
+            data-bind="click: OpenAddCustomerDialog, disable: isOpen" value="Create New Customer"/>
+              
+        <div data-bind="dialog: {
+                                    isOpen: isOpen,
+                                    modal: true,
+                                    title: 'Add A Customer',
+                                    resizable: false }">            
+            <div class="form-group">
+                <label class="control-label" for="my-number">User Name:</label>                
+                <input id="my-number" class="form-control"  data-bind="value: userName" type="text"/>
+                <label class="control-label" for="my-password">User pasword:</label>                
+                <input id="my-password" class="form-control"  data-bind="value: password" type="password"/>
+            </div>    
+            <input 
+                type='button'class="btn btn-sm btn-primary btn-block" 
+                data-bind="click: SaveCustomer" value="Create Customer"/>
+        </div>
+    </div>
+       
+    <div data-bind="compose: 'viewmodels/CustomerGrid' "> </div>
+</section>

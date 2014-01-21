@@ -28,7 +28,9 @@ var Login = (function () {
     function init() {
 
         $('#result').hide();
-
+        $('#register').on('click', function () {
+            
+        });
         $('#login_submit').first('button').click(function () {
             submitForm(showUserDataValidationResult);
         });
