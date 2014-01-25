@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Perevorot.Domain.IServices.DomainInterfaces;
+using Perevorot.Domain.Models.DomainEntities;
+using Perevorot.Web.Dtos;
 using Perevorot.Web.Models;
 
 namespace Perevorot.Web.Controllers
@@ -37,7 +41,10 @@ namespace Perevorot.Web.Controllers
         [HttpPost]
         public JsonResult GetCustomers(CustomerModel customer)
         {
-            return Json(new { FirstName = "Elvis", NumberOfCompletedFields = 15, CallsRegistered = 5, HasDetails=1 });
+            IList<Customer> customers = _customerService.GetCustomers();
+            IEnumerable<CustomerDto> customerDtos =
+                customers.Select(x => new CustomerDto {Id = x.Id, CreationDate = x.Created, CustomerName = x.Name});
+            return Json(customerDtos);
         }
 
     }

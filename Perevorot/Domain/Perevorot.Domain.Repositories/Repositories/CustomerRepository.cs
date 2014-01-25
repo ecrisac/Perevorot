@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Perevorot.Domain.Core.Infrastructure;
 using Perevorot.Domain.IRepositories;
 using Perevorot.Domain.Models.DomainEntities;
@@ -18,6 +19,15 @@ namespace Perevorot.Domain.Repositories.Repositories
             SaveOrUpdate(newCustomer);
         }
 
+        public IList<Customer> GetCustomers()
+        {
+            using (CreateUnitOfWork())
+            {
+                return GetAll<Customer>().ToList();
+            }
+        }
+
+        //TODO: Move to Users Repository.
         public User GetUserByUserNameAndPassword(string username, string password)
         {
             using (CreateUnitOfWork())

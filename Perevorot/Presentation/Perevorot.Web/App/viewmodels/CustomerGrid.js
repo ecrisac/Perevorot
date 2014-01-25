@@ -1,4 +1,4 @@
-﻿define(["knockout", "jquery", "datatables", "datatablesknockout"], function(ko, jQuery) {
+﻿define(["knockout", "jquery", "datatables", "datatablesknockout"], function(ko, $) {
 
     /* Object code */
     function GroupMember(id, name, isGroupLeader) {
@@ -20,16 +20,38 @@
         });
     }
 
+    var getData = function(array) {
+        var actionUrl = "../Customer/GetCustomers";
+        $.ajax({
+            type: "POST",
+            async :false,
+            url: actionUrl,
+            //data: $("#loginForm").serialize(), // serializes the form's elements.
+            success: function(data) {
+                $.each(data, function (index, value) {
+                    array.push(value);
+                });
+                
+            }
+        });
+    };
+
     /* View model */
-    var groupViewModel = {
-        groupMembers: ko.observableArray([
-            new GroupMember("1", "Abe", true),
-            new GroupMember("2", "Bob", false),
-            new GroupMember("3", "Bill", false)])
+    var groupViewModel = {        
+        groupMembers: ko.observableArray([])
     };
 
     groupViewModel.membersTable = ko.computed(function() {
         var self = this;
+        var datafromserver= [];
+        getData(datafromserver);
+
+        var somearr = new Array();
+        $.each(datafromserver, function(index, value) {
+            somearr.push(new GroupMember(value.id, value.CustomerName, value.CreationDate));
+        });
+
+        self.groupMembers(somearr);
 
         var finalArray = new Array();
         for (var i = 0; i < self.groupMembers().length; i++) {
