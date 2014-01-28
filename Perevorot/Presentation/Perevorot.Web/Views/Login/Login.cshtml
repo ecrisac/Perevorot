@@ -1,4 +1,4 @@
-﻿@model Perevorot.Web.Models.LoginModel
+﻿@model Perevorot.Web.Models.LoginViewModel
 
 <!DOCTYPE html>
 <html>
@@ -23,7 +23,6 @@
     {
         <div id="login_Div">
             <h2 class="form-signin-heading">Please sign in</h2>
-
             <div class="input-group input-group-sm">
                 @Html.TextBoxFor(x => x.UserName, new {@class = "form-control", placeholder = "Username"})
 
@@ -31,6 +30,7 @@
                 <div id="login_submit">
                     <input type="button" value="Login" class="btn btn-lg btn-primary btn-block" />
                 </div>
+                <a id="register">Register new account</a>
             </div>
 
             <div>

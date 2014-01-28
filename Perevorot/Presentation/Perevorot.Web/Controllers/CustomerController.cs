@@ -9,7 +9,7 @@ using Perevorot.Web.Models;
 namespace Perevorot.Web.Controllers
 {
     using System.Web.Mvc;
-
+    //[Authorize(Roles = "admin")]
     public class CustomerController : BaseController
     {
         private readonly ICustomerService _customerService;

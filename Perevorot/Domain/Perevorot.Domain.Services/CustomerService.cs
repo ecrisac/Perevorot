@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.IO;
 using Perevorot.Domain.Core.Infrastructure;
 using Perevorot.Domain.IRepositories;
 using Perevorot.Domain.IServices.DomainInterfaces;
@@ -14,6 +15,7 @@ namespace Perevorot.Domain.Services
         public CustomerService(ICustomerRepository customerRepository)
         {
             _customerRepository = customerRepository;
+           
         }
 
         public void AddNewCustomer(string name)
