@@ -8,16 +8,25 @@ namespace Perevorot.Domain.Core.Infrastructure
     {
         protected override void Seed(PerevorotEntities context)
         {
-            var user = new User("HarryPotter@Hogwarts.mag", "Phoenix1");
-            var userGroup = new UserGroup("Operators");
+            var user = new User("HarryPotter@Hogwarts.mag");
+            var userRole = new UserRole {RoleName = "Operator"};
+           
             var accessRight = new AccessRight("HomePage", AccessRightType.ReadAndWrite);
-            userGroup.AddAccessRight(accessRight);
-            userGroup.AddUser(user);
+            userRole.AddAccessRight(accessRight);
+            userRole.AddUser(user);
 
             context.Users.Add(user);
             context.AccessRights.Add(accessRight);
-            context.UserGroups.Add(userGroup);
+            context.UserRoles.Add(userRole);
+            var application = new Application
+                {
+                    ApplicationName = "Perevorot",
+                    Description = "Super Application description"
+                };
+            context.Applications.Add(application);
             context.SaveChanges();
+
+
         }
     }
 }

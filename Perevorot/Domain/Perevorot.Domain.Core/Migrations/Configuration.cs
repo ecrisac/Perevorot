@@ -1,4 +1,6 @@
+using System;
 using System.Data.Entity.Migrations;
+using System.Data.SqlTypes;
 using Perevorot.Domain.Core.Infrastructure;
 using Perevorot.Domain.Models.DomainEntities;
 using Perevorot.Domain.Models.Enums;
@@ -15,17 +17,51 @@ namespace Perevorot.Domain.Core.Migrations
 
         protected override void Seed(PerevorotEntities context)
         {
-            context.Users.Add(new User("test", "password"));
-
-            var user = new User("HarryPotter@Hogwarts.mag", "Phoenix1");
-            var userGroup = new UserGroup("Operators");
+            var application = new Application
+            {
+                ApplicationName = "Perevorot",
+                Description = "Super Application description"
+            };
+            const string userName = "Harry";
+            var user = new User(userName)
+            {
+                LoweredUserName = userName.ToLower(),
+                LastActivityDate = DateTime.Now,
+                Application = application
+            };
+            var userGroup = new UserRole { RoleName = "Operators" };
             var accessRight = new AccessRight("HomePage", AccessRightType.ReadAndWrite);
             userGroup.AddAccessRight(accessRight);
             userGroup.AddUser(user);
 
             context.Users.Add(user);
             context.AccessRights.Add(accessRight);
-            context.UserGroups.Add(userGroup);
+            context.UserRoles.Add(userGroup);
+           
+            var member = new Member
+            {
+                Password = "V/mmUWGyAQKWv4G/R8z7sB4q/Ww=",
+                Email = "test@gmail.com",
+                PasswordQuestion = "",
+                PasswordAnswer = "",
+                PasswordSalt = "",
+                IsApproved = true,
+                Comment = string.Empty,
+                CreateDate = DateTime.Now,
+                LastPasswordChangedDate = DateTime.Now,
+                IsLockedOut = false,
+                FailedPasswordAttemptCount = 0,
+                FailedPasswordAttemptWindowStart = DateTime.Now,
+                FailedPasswordAnswerAttemptCount = 0,
+                FailedPasswordAnswerAttemptWindowStart = DateTime.Now,
+                Application = application,
+                LastLockoutDate = SqlDateTime.MinValue.Value,
+                LastLoginDate = SqlDateTime.MinValue.Value,
+                User = user
+            };
+
+            context.MembershipData.Add(member);
+            context.Applications.Add(application);
             context.SaveChanges();
         }
     }

@@ -13,7 +13,7 @@ namespace Perevorot.Domain.Core.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201312221900164_addDatabase"; }
+            get { return "201401291041327_addDatabase"; }
         }
         
         string IMigrationMetadata.Source

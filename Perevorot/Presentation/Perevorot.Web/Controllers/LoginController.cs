@@ -18,7 +18,7 @@ namespace Perevorot.Web.Controllers
             _loginService = loginService;
         }
 
-        [HttpGet]
+        [HttpGet, AllowAnonymous]
         public ActionResult Get()
         {
             return View("Login");
@@ -43,10 +43,7 @@ namespace Perevorot.Web.Controllers
                     FormsAuthentication.SetAuthCookie(model.UserName, false);
                     return RedirectToAction("Index", "Home");
                 }
-                else
-                {
-                    ModelState.AddModelError("", "Ошибка при регистрации");
-                }
+                ModelState.AddModelError("", "Ошибка при регистрации");
             }
 
             return View(model);
@@ -56,6 +53,7 @@ namespace Perevorot.Web.Controllers
         [HttpPost]
         public JsonResult Login(LoginViewModel loginModel)
         {
+            MembershipCreateStatus createStatus;
             if (ModelState.IsValid &&
                 WebSecurity.Login(loginModel.UserName, loginModel.Password, persistCookie: loginModel.RememberMe))
             {
@@ -63,10 +61,7 @@ namespace Perevorot.Web.Controllers
 
                 return Json(new { Result = "Success" });
             }
-            
             return Json(new { Result = "Fail", Message = "Invalid user login" });
         }
-        
-        
     }
 }

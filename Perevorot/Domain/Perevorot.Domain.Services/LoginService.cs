@@ -28,8 +28,6 @@ namespace Perevorot.Domain.Services
                 if (!user.IsActive)
                     throw new FailedLoginException("User is disabled.");
 
-                if (user.Password != password)
-                    throw new FailedLoginException("Wrong password.");
 
                 user.LastLogin = DateTime.Now;
                 _loginRepository.SaveOrUpdate(user);

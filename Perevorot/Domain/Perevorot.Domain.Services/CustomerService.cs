@@ -1,5 +1,4 @@
-﻿using System.IO;
-using Perevorot.Domain.Core.Infrastructure;
+﻿using Perevorot.Domain.Core.Infrastructure;
 using Perevorot.Domain.IRepositories;
 using Perevorot.Domain.IServices.DomainInterfaces;
 

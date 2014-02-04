@@ -22,7 +22,7 @@ namespace Perevorot.Domain.Repositories.Repositories
         {
             using (CreateUnitOfWork())
             {
-                return GetAll<User>().SingleOrDefault(x => x.UserName == username && x.Password == password);
+                return GetAll<User>().SingleOrDefault(x => x.UserName == username);
             }
         }
     }

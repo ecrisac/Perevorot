@@ -27,7 +27,7 @@ namespace Perevorot.Web.Filters
 
                 try
                 {
-                   WebSecurity.InitializeDatabaseConnection("PerevorotEntities", "UserProfile", "UserId", "UserName", autoCreateTables: true);
+                   WebSecurity.InitializeDatabaseConnection("PerevorotEntities", "User", "UserId", "UserName", autoCreateTables: true);
                 }
                 catch (Exception ex)
                 {

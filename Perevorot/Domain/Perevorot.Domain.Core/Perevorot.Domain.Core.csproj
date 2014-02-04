@@ -64,9 +64,9 @@
     <Compile Include="Infrastructure\PerevorotEntities.cs" />
     <Compile Include="Infrastructure\UnitOfWork.cs" />
     <Compile Include="Infrastructure\UnitOfWorkFactory.cs" />
-    <Compile Include="Migrations\201312221900164_addDatabase.cs" />
-    <Compile Include="Migrations\201312221900164_addDatabase.Designer.cs">
-      <DependentUpon>201312221900164_addDatabase.cs</DependentUpon>
+    <Compile Include="Migrations\201401291041327_addDatabase.cs" />
+    <Compile Include="Migrations\201401291041327_addDatabase.Designer.cs">
+      <DependentUpon>201401291041327_addDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,8 +84,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201312221900164_addDatabase.resx">
-      <DependentUpon>201312221900164_addDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201401291041327_addDatabase.resx">
+      <DependentUpon>201401291041327_addDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
