@@ -1,20 +1,18 @@
-﻿using System;
-
-namespace Perevorot.Domain.Core.Infrastructure
+﻿namespace Perevorot.Domain.Core.Infrastructure
 {
     public class UnitOfWork : IUnitOfWork
     {
-        [ThreadStatic]
-        private static PerevorotEntities context;
-
-        private readonly bool owner;
+        //TODO: don't use ThreadStatic!
+        //http://stackoverflow.com/questions/3531303/threadstatic-member-lose-value-on-every-page-load
+        private static PerevorotEntities _context;
+        private readonly bool _owner;
 
         public UnitOfWork()
         {
-            if (context == null)
+            if (_context == null)
             {
-                owner = true;
-                context = new PerevorotEntities();
+                _owner = true;
+                _context = new PerevorotEntities();
             }
         }
 
@@ -22,23 +20,23 @@ namespace Perevorot.Domain.Core.Infrastructure
 
         public void Dispose()
         {
-            if (owner)
+            if (_owner)
             {
-                context.Dispose();
-                context = null;
+                _context.Dispose();
+                _context = null;
             }
         }
 
         public void Commit()
         {
-            context.SaveChanges();
+            _context.SaveChanges();
         }
 
         #endregion
 
         public static PerevorotEntities GetContext()
         {
-            return context;
+            return _context;
         }
     }
 }
