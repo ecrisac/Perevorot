@@ -131,9 +131,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\JsonNetFormatter.cs" />
-    <Compile Include="BaseController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Configuration\JsonNetResult.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
@@ -345,6 +346,10 @@
     <Content Include="Scripts\knockout-3.0.0.debug.js" />
     <Content Include="Scripts\knockout-3.0.0.js" />
     <Content Include="Scripts\knockout-jqueryui.min.js" />
+    <Content Include="Scripts\moment-with-langs.js" />
+    <Content Include="Scripts\moment-with-langs.min.js" />
+    <Content Include="Scripts\moment.js" />
+    <Content Include="Scripts\moment.min.js" />
     <Content Include="weyland-config.js" />
     <Content Include="App\locales\en\shell.txt" />
     <Content Include="NLog.config">

@@ -9,6 +9,7 @@
         'knockout': '../Scripts/knockout-3.0.0',
         'knockout-jqueryui': '../Scripts/knockout-jqueryui.min',
         'i18next': '../Scripts/i18next.amd.withJQuery-1.7.1.min',
+        'moment': '../Scripts/moment.min',
         'datatables': '../Scripts/DataTables-1.9.4/jquery.dataTables',
         'datatablesknockout': '../Scripts/DataTables-1.9.4/knockout-datatables'
     }

@@ -43,7 +43,9 @@ namespace Perevorot.Web.Controllers
         {
             IList<Customer> customers = _customerService.GetCustomers();
             IEnumerable<CustomerDto> customerDtos =
-                customers.Select(x => new CustomerDto {Id = x.Id, CreationDate = x.Created, CustomerName = x.Name});
+                customers.Select(x => new CustomerDto {Id = x.Id,
+                    CreationDate = x.Created.LocalDateTime,
+                    CustomerName = x.Name});
             return Json(customerDtos);
         }
 

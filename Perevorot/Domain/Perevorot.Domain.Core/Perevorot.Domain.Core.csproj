@@ -68,6 +68,10 @@
     <Compile Include="Migrations\201312221900164_addDatabase.Designer.cs">
       <DependentUpon>201312221900164_addDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201402042049503_ChangedDateTimeToDateTimeOffsetForEntity.cs" />
+    <Compile Include="Migrations\201402042049503_ChangedDateTimeToDateTimeOffsetForEntity.Designer.cs">
+      <DependentUpon>201402042049503_ChangedDateTimeToDateTimeOffsetForEntity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -86,6 +90,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201312221900164_addDatabase.resx">
       <DependentUpon>201312221900164_addDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201402042049503_ChangedDateTimeToDateTimeOffsetForEntity.resx">
+      <DependentUpon>201402042049503_ChangedDateTimeToDateTimeOffsetForEntity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
