@@ -78,3 +78,18 @@
     position: absolute;
     display: none;  
 }
+
+.logoff {
+    background-image: url(../images/logout-icon.png);
+    background-repeat: no-repeat;
+    display:block;
+    height:60px;
+    width:60px;
+    text-indent:-9999px;
+}
+.floatLeft {
+    float: left;
+}
+.floatRight {
+    float: right;
+}

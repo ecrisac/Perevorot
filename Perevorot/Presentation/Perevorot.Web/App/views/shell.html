@@ -1,10 +1,14 @@
 ﻿<div>   
     <div class="container" >
         <div class="header" >
-            <input type="text" data-i18n="[value]shell:header"/>
-            <div data-bind="foreach: languages">
+            <input type="text" data-i18n="[value]shell:logOff"/>
+            <div>
+            <div data-bind="foreach: languages" class="floatLeft">
                 <a href="#" data-bind="text: $data, click: $parent.changeLanguage"></a>&nbsp;
             </div>  
+                <a href="#" data-bind="click: logOff" data-i18n="shell:logOff" class="floatRight logoff"></a>
+             </div>
+
         </div>
 
         <div class="sidebar">
@@ -31,7 +35,7 @@
         color: white;
         font-weight: bold;
         font-size: 20px;
-        height: 80px;
+        height: 100px;
         padding: 5px;
     }
 

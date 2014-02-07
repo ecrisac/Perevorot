@@ -11,6 +11,11 @@
             document.cookie = 'lang=' + data;
             location.reload();
         },
+        logOff : function () {
+            $.post("/Login/LogOff/", function () {
+                location.reload();
+            });
+        },
         activate: function () {
             router.map([
                 { route: '', title: 'Welcome', moduleId: 'viewmodels/welcome', nav: true },

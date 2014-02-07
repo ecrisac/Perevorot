@@ -3,11 +3,11 @@ var Login = Perevorot.Login || {};
 
 
 var Login = (function () {
-
-    $(document).ready(function () {
+    var _public = {};
+    $(function () {
         init();
     });
-
+    
     var submitForm = function (callback) {
         var actionUrl = $("#loginForm").attr('action');
         $.post(actionUrl,$("#loginForm").serialize(),
@@ -41,4 +41,6 @@ var Login = (function () {
             $("#loading").hide();
         });
     }
+
+    return _public;
 })();

@@ -27,7 +27,7 @@ namespace Perevorot.Web.Controllers
         public ActionResult LogOff()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Login", "Account");
+            return RedirectToAction("Get","Login");
         }
 
         [HttpPost]

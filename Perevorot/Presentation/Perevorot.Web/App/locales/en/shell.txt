@@ -1,3 +1,4 @@
 ﻿{
     "header": "The Header"
+    "logOff": "Log Off"
 }
