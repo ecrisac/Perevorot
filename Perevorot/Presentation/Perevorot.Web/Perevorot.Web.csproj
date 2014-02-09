@@ -64,6 +64,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web.DynamicData" />
@@ -130,12 +131,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CustomRoleProvider.cs" />
     <Compile Include="App_Start\JsonNetFormatter.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Configuration\JsonNetResult.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="EfMembershipProvider.cs" />
     <Compile Include="Dtos\CustomerDto.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -143,6 +146,7 @@
     </Compile>
     <Compile Include="Models\CustomerModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="EfMembershipUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResourceLocator\ControllerInstaller.cs" />
     <Compile Include="ResourceLocator\IoC.cs" />
@@ -161,9 +165,11 @@
     <Content Include="App\main.js" />
     <Content Include="App\viewmodels\Customer.js" />
     <Content Include="App\viewmodels\CustomerGrid.js" />
+    <Content Include="App\viewmodels\infobar.js" />
     <Content Include="App\viewmodels\perevorot.js" />
     <Content Include="App\viewmodels\shell.js" />
     <Content Include="App\viewmodels\welcome.js" />
+    <Content Include="App\views\Registration.html" />
     <Content Include="App\views\CustomerGrid.html" />
     <Content Include="App\views\Customer.html" />
     <Content Include="App\views\perevorot.html" />

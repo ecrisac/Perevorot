@@ -12,8 +12,5 @@ namespace Perevorot.Domain.Models.DomainEntities
 
         public string ResourseId { get; private set; }
         public AccessRightType AccessRightType { get; private set; }
-
-        // Foreign key
-        public UserGroup UserGroup { get; set; }
     }
 }

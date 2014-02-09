@@ -1,4 +1,4 @@
-﻿define(['plugins/router', 'durandal/app', 'i18next', 'jquery'], function (router, app, i18n, $) {
+﻿define(['plugins/router', 'durandal/app', 'i18next', 'jquery', 'infobar'], function (router, app, i18n, $, infobar) {
     return {
         router: router,
         search: function () {
@@ -10,6 +10,12 @@
         changeLanguage: function (data) {
             document.cookie = 'lang=' + data;
             location.reload();
+        },
+        infobar: infobar.Instance,
+        logOff : function () {
+            $.post("/Login/LogOff/", function () {
+                location.reload();
+            });
         },
         activate: function () {
             router.map([

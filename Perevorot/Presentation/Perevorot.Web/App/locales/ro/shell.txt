@@ -1,3 +1,4 @@
 ﻿{
-    "header": "Antet"
+    "header": "Antet",
+	"logOff": "Log Off"
 }

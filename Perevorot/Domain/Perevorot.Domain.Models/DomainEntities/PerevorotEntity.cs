@@ -1,4 +1,6 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Perevorot.Domain.Models.DomainEntities
 {
@@ -8,7 +10,8 @@ namespace Perevorot.Domain.Models.DomainEntities
         {
             Created = DateTime.UtcNow;
         }
-
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public long Id { get; set; }
 
         public DateTimeOffset Created { get; set; }

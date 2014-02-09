@@ -1,3 +1,4 @@
 ﻿{
-    "header": "Zagolovok"
+    "header": "Zagolovok",
+    "logOff": "Log Off"
 }

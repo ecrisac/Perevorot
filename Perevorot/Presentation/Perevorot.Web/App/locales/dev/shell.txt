@@ -1,3 +1,4 @@
 ﻿{
-    "header": "Dev-Header"
+    "header": "Dev-Header",
+    "logOff": "Log Off"
 }
