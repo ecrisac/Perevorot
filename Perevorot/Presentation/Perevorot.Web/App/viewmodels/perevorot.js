@@ -1,16 +1,15 @@
-﻿define(["knockout"],function (ko) {
+﻿define(["knockout", "infobar"], function (ko, infobar) {
     var ctor = function () {
         var self = this;
-        self.displayName = 'Perevorot, a test page';
-        self.counter = ko.observable(0);
+        self.displayName = "Perevorot, a test page";
 
-        var incCounter = function () {
-            self.counter(self.counter() + 1);
-
-            setTimeout(incCounter, 1000);
+        self.showTime = function () {
+            infobar.show(new Date(), "info");
         }
 
-        incCounter();
+        self.showError = function () {
+            infobar.show("Error message", "error");
+        }
     };
 
     //Note: This module exports a function. That means that you, the developer, can create multiple instances.

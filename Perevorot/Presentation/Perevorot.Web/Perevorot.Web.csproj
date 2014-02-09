@@ -164,6 +164,7 @@
     <Content Include="App\main.js" />
     <Content Include="App\viewmodels\Customer.js" />
     <Content Include="App\viewmodels\CustomerGrid.js" />
+    <Content Include="App\viewmodels\infobar.js" />
     <Content Include="App\viewmodels\perevorot.js" />
     <Content Include="App\viewmodels\shell.js" />
     <Content Include="App\viewmodels\welcome.js" />

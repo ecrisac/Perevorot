@@ -10,7 +10,8 @@
         'knockout-jqueryui': '../Scripts/knockout-jqueryui.min',
         'i18next': '../Scripts/i18next.amd.withJQuery-1.7.1.min',
         'datatables': '../Scripts/DataTables-1.9.4/jquery.dataTables',
-        'datatablesknockout': '../Scripts/DataTables-1.9.4/knockout-datatables'
+        'datatablesknockout': '../Scripts/DataTables-1.9.4/knockout-datatables',
+        'infobar': 'viewmodels/infobar'
     }
 });
 
