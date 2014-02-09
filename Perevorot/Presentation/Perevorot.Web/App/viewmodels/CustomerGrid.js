@@ -1,11 +1,11 @@
-﻿define(["knockout", "jquery", "datatables", "datatablesknockout"], function(ko, $) {
+﻿define(["knockout", "jquery", "moment", "datatables", "datatablesknockout"], function(ko, $, moment) {
 
     /* Object code */
     function customerRow(id, name, creationDate) {
         var self = this;
         self.id = id;
         self.name = name;
-        self.creationDate = ko.observable(creationDate);
+        self.creationDate = ko.observable(creationDate.format(window.DateTimeFormat));
 
         var completedFields = Math.floor(Math.random() * 21);
         var registeredCalls = Math.floor(Math.random() * 6);
@@ -24,7 +24,7 @@
         });
         
         self.creationDate = ko.computed(function () {
-            return '<b>' + self.creationDate() + '</b>';
+            return '<span>' + self.creationDate() + '</span>';
         });
         
         self.completedFields = ko.computed(function () {
@@ -54,7 +54,7 @@
             //data: $("#loginForm").serialize(), // serializes the form's elements.
             success: function(data) {
                 $.each(data, function (index, value) {
-                    resultArray.push(new customerRow(value.Id, value.CustomerName, value.CreationDate));
+                    resultArray.push(new customerRow(value.Id, value.CustomerName, moment(value.CreationDate)));
                 });
                 
             }
@@ -67,22 +67,19 @@
         customers: ko.observableArray([])
     };
 
-    customerViewModel.customerTableRows = ko.computed(function() {
-        var self = this;
+    customerViewModel.customerTableRows = ko.computed(function() {        
         var dataFromServer = getData();        
 
-        self.customers(dataFromServer);
-
-        var finalArray = new Array();
-        for (var i = 0; i < self.customers().length; i++) {
+        var finalArray = new Array();        
+        $.each(dataFromServer, function (index, value) {
             var rowArray = new Array();
-            rowArray[0] = self.customers()[i].nameWithLink();
-            rowArray[1] = self.customers()[i].creationDate();
-            rowArray[2] = self.customers()[i].completedFields();
-            rowArray[3] = self.customers()[i].registeredCalls();
-            rowArray[4] = self.customers()[i].details();
+            rowArray.push(value.nameWithLink());
+            rowArray.push(value.creationDate());
+            rowArray.push(value.completedFields());
+            rowArray.push(value.registeredCalls());
+            rowArray.push(value.details());
             finalArray.push(rowArray);
-        }
+        });
        
         return finalArray;
     }, customerViewModel);

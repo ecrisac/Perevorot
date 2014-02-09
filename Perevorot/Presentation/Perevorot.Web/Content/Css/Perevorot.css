@@ -93,3 +93,17 @@
 .floatRight {
     float: right;
 }
+
+/*Customer Page Styles*/
+.searchIcon {
+    margin-left: 0px !important;
+    border-left: 0px !important;
+}
+
+.dataTables_wrapper th {
+    font-size: 14px;
+}
+
+
+
+/*!Customer Page Styles*/

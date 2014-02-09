@@ -59,7 +59,6 @@
     <Compile Include="DomainEntities\AccountModels.cs" />
     <Compile Include="DomainEntities\Customer.cs" />
     <Compile Include="DomainEntities\PerevorotEntity.cs" />
-    <Compile Include="DomainEntities\User.cs" />
     <Compile Include="DomainEntities\UserRole.cs" />
     <Compile Include="Enums\AccessRightType.cs" />
     <Compile Include="Enums\LoginFailType.cs" />

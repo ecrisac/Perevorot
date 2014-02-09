@@ -1,19 +1,18 @@
 ﻿using System;
-using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace Perevorot.Web.Dtos
-{
-    [DataContract]
-    [Serializable]
+{    
+    [JsonObject]
     public class CustomerDto
     {
-        [DataMember]
+        [JsonProperty(Order = 1)]
         public long Id;
 
-        [DataMember]
+        [JsonProperty(Order = 2)]
         public string CustomerName;
 
-        [DataMember]        
-        public DateTime CreationDate;
+        [JsonProperty(Order = 3)]
+        public DateTimeOffset CreationDate;
     }
 }

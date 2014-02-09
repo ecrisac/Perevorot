@@ -23,20 +23,35 @@ namespace Perevorot.Domain.Core.Migrations
                 Description = "Super Application description"
             };
             const string userName = "Harry";
-            var user = new User(userName)
+            var userHarry = new User(userName)
             {
                 LoweredUserName = userName.ToLower(),
                 LastActivityDate = DateTime.Now,
                 Application = application
             };
-            var userGroup = new UserRole { RoleName = "Operators" };
-            var accessRight = new AccessRight("HomePage", AccessRightType.ReadAndWrite);
-            userGroup.AddAccessRight(accessRight);
-            userGroup.AddUser(user);
 
-            context.Users.Add(user);
+            const string userHarryPotterName = "HarryPotter@Hogwarts.mag";
+            var userHarryPotter = new User(userHarryPotterName)
+            {
+                LoweredUserName = userHarryPotterName.ToLower(),
+                LastActivityDate = DateTime.Now,
+                Application = application
+            };
+
+
+
+            var userRole = new UserRole { RoleName = "Operators" };
+            var accessRight = new AccessRight("HomePage", AccessRightType.ReadAndWrite);
+            userRole.AddAccessRight(accessRight);
+            userRole.AddUser(userHarry);
+
+            context.Users.Add(userHarry);
+
+            userRole.AddUser(userHarryPotter);
+
+            context.Users.Add(userHarryPotter);
             context.AccessRights.Add(accessRight);
-            context.UserRoles.Add(userGroup);
+            context.UserRoles.Add(userRole);
            
             var member = new Member
             {
@@ -57,10 +72,33 @@ namespace Perevorot.Domain.Core.Migrations
                 Application = application,
                 LastLockoutDate = SqlDateTime.MinValue.Value,
                 LastLoginDate = SqlDateTime.MinValue.Value,
-                User = user
+                User = userHarry
+            };
+
+            var memberHarryPotter = new Member
+            {
+                Password = "0VwFfBoSQ3TRwgesiUwKsAlh4b8=",
+                Email = "test@gmail.com",
+                PasswordQuestion = "",
+                PasswordAnswer = "",
+                PasswordSalt = "",
+                IsApproved = true,
+                Comment = string.Empty,
+                CreateDate = DateTime.Now,
+                LastPasswordChangedDate = DateTime.Now,
+                IsLockedOut = false,
+                FailedPasswordAttemptCount = 0,
+                FailedPasswordAttemptWindowStart = DateTime.Now,
+                FailedPasswordAnswerAttemptCount = 0,
+                FailedPasswordAnswerAttemptWindowStart = DateTime.Now,
+                Application = application,
+                LastLockoutDate = SqlDateTime.MinValue.Value,
+                LastLoginDate = SqlDateTime.MinValue.Value,
+                User = userHarryPotter
             };
 
             context.MembershipData.Add(member);
+            context.MembershipData.Add(memberHarryPotter);
             context.Applications.Add(application);
             context.SaveChanges();
         }
