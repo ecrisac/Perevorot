@@ -63,5 +63,15 @@ namespace Perevorot.Web.Controllers
             }
             return Json(new { Result = "Fail", Message = "Invalid user login" });
         }
+
+        [HttpPost]
+        public JsonResult CreateRole(string roleName)
+        {
+            Roles.CreateRole("Administrators");
+            
+                return Json(new { Result = "Success" });
+            
+            return Json(new { Result = "Fail", Message = "Invalid user login" });
+        }
     }
 }
