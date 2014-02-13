@@ -19,14 +19,18 @@ namespace Perevorot.Domain.Core.Infrastructure
         public DbSet<Application> Applications { get; set; }
         public DbSet<Member> MembershipData { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+      protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            // Configure Code First to ignore PluralizingTableName convention
-            // If you keep this convention then the generated tables will have pluralized names.
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            modelBuilder.Entity<User>()
+                .HasMany(x => x.UserRoles)
+                .WithMany(x => x.Users)
+            .Map(x =>
+            {
+                x.ToTable("UsersToUserRoles"); 
+                x.MapLeftKey("UserId");
+                x.MapRightKey("UserRoleId");
+            });
         }
-
-
-
     }
 }

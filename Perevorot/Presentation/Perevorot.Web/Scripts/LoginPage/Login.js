@@ -28,11 +28,14 @@ var Login = (function () {
     function init() {
 
         $('#result').hide();
-        $('#register').on('click', function () {
-            
-        });
+      
         $('#login_submit').first('button').click(function () {
             submitForm(showUserDataValidationResult);
+        });
+        $('body').keydown(function (event) {
+            if (event.keyCode == 13) {
+                $('#login_submit').first('button').trigger('click');
+            }
         });
 
         $(document).ajaxStart(function () {
