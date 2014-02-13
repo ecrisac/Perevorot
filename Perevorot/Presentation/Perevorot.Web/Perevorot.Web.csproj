@@ -139,11 +139,13 @@
     <Compile Include="Configuration\JsonNetResult.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="EfMembershipProvider.cs" />
-    <Compile Include="Dtos\CustomerDto.cs" />
+    <Compile Include="Dtos\CustomersGridResponseModel.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\DatatablesRequestInfo.cs" />
+    <Compile Include="Helpers\DatatablesResponseInfo.cs" />
     <Compile Include="Models\CustomerModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="EfMembershipUser.cs" />

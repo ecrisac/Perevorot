@@ -3,7 +3,7 @@
 Datatables Custom Binding for Knockout.js
 
 ******************** */
-define(["knockout"], function (ko) {
+define(["knockout","jquery"], function (ko,$) {
     /* Custom binding */
     ko.bindingHandlers.dataTable = {
         init: function (element, valueAccessor) {
@@ -24,12 +24,14 @@ define(["knockout"], function (ko) {
                     data: valueAccessor()
                 };
             }
+            
+            if (!$(element).dataTable().fnSettings()) {
+                // Clear table
+                $(element).dataTable().fnClearTable();
 
-            // Clear table
-            $(element).dataTable().fnClearTable();
-
-            // Rebuild table from data source specified in binding
-            $(element).dataTable().fnAddData(binding.data());
+                // Rebuild table from data source specified in binding
+                $(element).dataTable().fnAddData(binding.data());
+            }
         }
     };
 });

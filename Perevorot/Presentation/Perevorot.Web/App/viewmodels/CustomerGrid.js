@@ -18,6 +18,10 @@
         //self.link = ko.computed(function() {
         //    return "/#user/" + self.id;
         //});
+        
+        self.customerId = ko.computed(function () {
+            return '<a href="#' + self.id + '">' + self.name + '</a>';
+        });
 
         self.nameWithLink = ko.computed(function() {
             return '<a href="#' + self.id + '">' + self.name + '</a>';
@@ -67,12 +71,17 @@
         customers: ko.observableArray([])
     };
 
-    customerViewModel.customerTableRows = ko.computed(function() {        
-        var dataFromServer = getData();        
+    customerViewModel.dateRenderer = function (date) {
+        return moment(date.aData.CreationDate).format(window.DateTimeFormat);
+    };
+
+    customerViewModel.customerTableRows = ko.computed(function() {
+        var dataFromServer = [];//getData();
 
         var finalArray = new Array();        
         $.each(dataFromServer, function (index, value) {
             var rowArray = new Array();
+            rowArray.push(value.customerId());
             rowArray.push(value.nameWithLink());
             rowArray.push(value.creationDate());
             rowArray.push(value.completedFields());

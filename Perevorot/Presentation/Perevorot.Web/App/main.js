@@ -32,9 +32,8 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'durandal/bin
         dialog: true,
         widget: true
     });
-    
-    //TODO: Remove later to speed up loading
-    setTimeout(appStart, 500);
+
+        
 
     var i18NOptions = {
         fallbackLng: 'en',
@@ -47,6 +46,8 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'durandal/bin
         cookieName: 'lang',
         getAsync: false // prevents translations being done before resources are loaded
     };
+        
+
 
     function appStart(parameters) {
         app.start().then(function () {
@@ -67,5 +68,7 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'durandal/bin
             });
         });
     }
+        
+    appStart();
    
 });

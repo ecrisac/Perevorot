@@ -25,19 +25,22 @@
                                         "bPaginate": true,
                                         "sPaginationType": "full_numbers",
                                         "bLengthChange": false,
+                                        "bProcessing": true,
+                                        "bServerSide": true,
+                                        "sAjaxSource": "../Customer/GetCustomers",
+                                        "sServerMethod": "POST",
                                         "bFilter": false,
                                         "bSort": false,
                                         "bInfo": false,
                                         "bAutoWidth": false,
-                                        "aoColumns": [
-                                            { "sWidth": "45%" },
-                                            { "sWidth": "20%" },
-                                            { "sWidth": "15%" },
-                                            { "sWidth": "10%" },
-                                            { "sWidth": "10%", "sClass": "center", "bSortable": false },
+                                        "aoColumns": [                                  
+                                            { "sWidth": "45%", "mDataProp": "CustomerName" },
+                                            { "sWidth": "20%", "mDataProp": "CreationDate","fnRender": dateRenderer },
+                                            { "sWidth": "15%", "mDataProp": "Calls" },
+                                            { "sWidth": "10%", "mDataProp": "Fields" },
+                                            { "sWidth": "10%", "mDataProp": "Details", "sClass": "center", "bSortable": false },
                                         ]
-                                    },
-                                  "data":  customerTableRows}'>
+                                    }}'>
         <thead>
             <tr>
                 <th>Customer Name</th>
