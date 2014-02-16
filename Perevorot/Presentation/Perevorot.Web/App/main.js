@@ -12,6 +12,7 @@
         'moment': '../Scripts/moment.min',
         'datatables': '../Scripts/DataTables-1.9.4/jquery.dataTables',
         'datatablesknockout': '../Scripts/DataTables-1.9.4/knockout-datatables',
+        'datatablespagination':'../Scripts/DataTables-1.9.4/BootstrapPaginationExt',
         'infobar': 'viewmodels/infobar'
     }
 });

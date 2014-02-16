@@ -8,7 +8,7 @@ using WebMatrix.WebData;
 
 namespace Perevorot.Web.Controllers
 {
-    [InitializeSimpleMembership]
+    
     public class LoginController : BaseController
     {
         private readonly ILoginService _loginService;
@@ -67,6 +67,7 @@ namespace Perevorot.Web.Controllers
         [HttpPost]
         public JsonResult CreateRole(string roleName)
         {
+            //todo: Encapsulate in service layer.
             Roles.CreateRole("Administrators");
             
                 return Json(new { Result = "Success" });

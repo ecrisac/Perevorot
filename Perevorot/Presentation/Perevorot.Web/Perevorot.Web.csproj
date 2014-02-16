@@ -145,8 +145,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\DatatablesRequestInfo.cs" />
-    <Compile Include="Helpers\DatatablesResponseInfo.cs" />
+    <Compile Include="Helpers\JQueryDataTablesModelBinder.cs" />
+    <Compile Include="Helpers\JQueryDataTablesModel.cs" />
+    <Compile Include="Helpers\JQueryDataTablesResponse.cs" />
     <Compile Include="Models\CustomerModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="EfMembershipUser.cs" />
@@ -331,6 +332,7 @@
     <Content Include="Scripts\almond-custom.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\DataTables-1.9.4\BootstrapPaginationExt.js" />
     <Content Include="Scripts\DataTables-1.9.4\jquery.dataTables.js" />
     <Content Include="Scripts\DataTables-1.9.4\jquery.dataTables.min.js" />
     <Content Include="Scripts\DataTables-1.9.4\knockout-datatables.js" />

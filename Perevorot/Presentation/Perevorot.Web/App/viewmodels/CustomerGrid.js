@@ -1,4 +1,4 @@
-﻿define(["knockout", "jquery", "moment", "datatables", "datatablesknockout"], function(ko, $, moment) {
+﻿define(["knockout", "jquery", "moment", "datatables", "datatablesknockout", "datatablespagination"], function (ko, $, moment) {
 
     /* Object code */
     function customerRow(id, name, creationDate) {
@@ -68,8 +68,21 @@
 
     /* View model */
     var customerViewModel = {        
-        customers: ko.observableArray([])
+        self: this,
+        customers: ko.observableArray([]),
+        searchedCustomerName: ko.observable()      
     };
+
+    customerViewModel.search = function() {
+        customerViewModel.table.fnFilter(customerViewModel.searchedCustomerName(), 0);
+    };
+    
+    customerViewModel.onInitComplete = function () {
+        customerViewModel.table = this;
+        var data = this.fnGetData();
+        customerViewModel.customers(data);
+    };
+
 
     customerViewModel.dateRenderer = function (date) {
         return moment(date.aData.CreationDate).format(window.DateTimeFormat);

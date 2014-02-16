@@ -1,9 +1,11 @@
 ﻿using System.Text;
 using System.Web.Mvc;
 using Perevorot.Web.Configuration;
+using Perevorot.Web.Filters;
 
 namespace Perevorot.Web.Controllers
 {
+    [InitializeSimpleMembership]
     public class BaseController : Controller
     {
         protected override JsonResult Json(object data, string contentType,

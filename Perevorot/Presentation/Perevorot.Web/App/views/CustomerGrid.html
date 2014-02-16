@@ -1,5 +1,4 @@
-﻿<section>
-    
+﻿<section>    
     <div id="customerSearchDiv">
         <div class="navbar navbar-default" role="navigation">
             <div class="navbar-header">
@@ -7,11 +6,11 @@
             </div>
 
             <div class="col-xs-5 col-sm-9 pull-right">
-                <form class="navbar-form" role="search">
+                <form data-bind="submit: search" class="navbar-form" role="search">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Harry Potter" name="customerSearch" id="customerSearch">
+                        <input type="text" class="form-control" placeholder="Harry Potter" data-bind="value: searchedCustomerName, valueUpdate: ['keyup', 'search']" name="searchedCustomerName"/>
                         <div class="input-group-btn">
-                            <button type="button" class="btn btn-default searchIcon"><span class="glyphicon glyphicon-search"></span></button>
+                            <a type="button" data-bind="click: search" class="btn btn-default searchIcon"><span class="glyphicon glyphicon-search"></span></a>
                         </div>
                     </div>
                 </form>
@@ -29,10 +28,13 @@
                                         "bServerSide": true,
                                         "sAjaxSource": "../Customer/GetCustomers",
                                         "sServerMethod": "POST",
-                                        "bFilter": false,
-                                        "bSort": false,
+                                        "sDom": "<\"top\"i>rt<\"bottom\"lp><\"clear\">",
+                                        "sPaginationType": "bootstrap",
+                                        "bFilter": true,
+                                        "bSort": true,
                                         "bInfo": false,
                                         "bAutoWidth": false,
+                                        "fnInitComplete": onInitComplete,
                                         "aoColumns": [                                  
                                             { "sWidth": "45%", "mDataProp": "CustomerName" },
                                             { "sWidth": "20%", "mDataProp": "CreationDate","fnRender": dateRenderer },

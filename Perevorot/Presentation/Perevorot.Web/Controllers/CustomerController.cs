@@ -6,11 +6,12 @@ using Perevorot.Domain.IServices.DomainInterfaces;
 using Perevorot.Domain.Models.DomainEntities;
 using Perevorot.Web.Dtos;
 using Perevorot.Web.Helpers;
+using Perevorot.Web.Helpers.jQuery.DataTables.Mvc;
 using Perevorot.Web.Models;
 
 namespace Perevorot.Web.Controllers
 {
-    //[Authorize(Roles = "admin")]
+    [Authorize(Roles = "Operators")]
     public class CustomerController : BaseController
     {
         private readonly ICustomerService _customerService;
@@ -39,10 +40,10 @@ namespace Perevorot.Web.Controllers
         }
 
         [HttpPost]
-        public JsonResult GetCustomers(DatatablesRequestInfo datatablesRequestInfo,CustomerModel customer)
+        public JsonResult GetCustomers(JQueryDataTablesModel datatablesRequestInfo, CustomerModel customer)
         {
             var random = new Random();
-            IList<Customer> customers = _customerService.GetCustomers();
+            IList<Customer> customers = _customerService.GetCustomers().Where(x => x.Name.StartsWith(datatablesRequestInfo.sSearch_[0])).ToList();
             IEnumerable<CustomersGridResponseModel> customerDtos =
                    customers.Select(x => new CustomersGridResponseModel
                    {
@@ -58,12 +59,9 @@ namespace Perevorot.Web.Controllers
             IEnumerable<CustomersGridResponseModel> dtos =
                 customersGridResponseModels.Skip(datatablesRequestInfo.iDisplayStart)
                                            .Take(datatablesRequestInfo.iDisplayLength);
-            var response = new DatatablesResponseInfo(datatablesRequestInfo)
-                {
-                    iTotalRecords = customersGridResponseModels.Count(),
-                    iTotalDisplayRecords = customersGridResponseModels.Count(),
-                    aaData = dtos
-                };
+            var numberOfcustomersToShow = customersGridResponseModels.Count();
+            var response = new JQueryDataTablesResponse<CustomersGridResponseModel>(dtos, numberOfcustomersToShow, numberOfcustomersToShow,
+                                                                                    datatablesRequestInfo.sEcho);
             return Json(response);
         }
     }

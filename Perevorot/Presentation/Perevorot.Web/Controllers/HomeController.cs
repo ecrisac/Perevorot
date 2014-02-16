@@ -3,6 +3,7 @@
     using NLog;
     using System.Web.Mvc;
 
+    [Authorize(Roles = "Operators")]
     public class HomeController : BaseController
     {
         private static Logger logger = LogManager.GetCurrentClassLogger();
