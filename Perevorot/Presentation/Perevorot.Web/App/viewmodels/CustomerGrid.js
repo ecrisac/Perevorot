@@ -3,7 +3,6 @@
     /* View model */
     var customerViewModel = {        
         self: this,
-        customers: ko.observableArray([]),
         searchedCustomerName: ko.observable()      
     };
 
@@ -13,13 +12,16 @@
     
     customerViewModel.onInitComplete = function () {
         customerViewModel.table = this;
-        var data = this.fnGetData();
-        customerViewModel.customers(data);
     };
 
-    customerViewModel.dateRenderer = function (date) {
-        return moment(date.aData.CreationDate).format(window.DateTimeFormat);
+    customerViewModel.dateRenderer = function (data) {
+        return moment(data.aData.CreationDate).format(window.DateTimeFormat);
     };
+    
+    customerViewModel.detailsRenderer = function (data) {
+        return '<span class="glyphicon glyphicon-cog"></span>';
+    };
+    
     
     customerViewModel.getData = function (sSource, aoData, fnCallback, oSettings) {
         if ($.trim(customerViewModel.searchedCustomerName())=="") {

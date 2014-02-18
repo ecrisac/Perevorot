@@ -8,7 +8,7 @@ using WebMatrix.WebData;
 
 namespace Perevorot.Web.Controllers
 {
-    
+    [InitializeSimpleMembership]
     public class LoginController : BaseController
     {
         private readonly ILoginService _loginService;
@@ -23,6 +23,7 @@ namespace Perevorot.Web.Controllers
         {
             return View("Login");
         }
+
         [HttpPost]
         public ActionResult LogOff()
         {
