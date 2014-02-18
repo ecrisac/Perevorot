@@ -1,4 +1,4 @@
-﻿define(['plugins/router', 'durandal/app', 'i18next', 'jquery', 'infobar'], function (router, app, i18n, $, infobar) {
+﻿define(['plugins/router', 'durandal/app', 'i18next', 'jquery', 'infobar', 'knockout-jqueryui'], function (router, app, i18n, $, infobar, koJqUi) {
     return {
         router: router,
         search: function () {

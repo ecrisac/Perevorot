@@ -14,8 +14,18 @@
     var Infobar = function () {
         var self = this;
 
+        self.visible = ko.observable(false);
         self.message = ko.observable();
         self.level = ko.observable();
+        self.moreInfoShown = ko.observable(false);
+
+        self.hide = function () {
+            self.visible(false);
+        }
+
+        self.showMoreInfo = function () {
+            self.moreInfoShown(true);
+        }
     }
 
     exports.Instance = new Infobar();
@@ -24,6 +34,7 @@
         console.log(message);
         exports.Instance.message(message);
         exports.Instance.level(level);
+        exports.Instance.visible(true);
     }
 
     return exports;

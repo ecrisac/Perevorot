@@ -20,7 +20,19 @@
         </div>
 
         <div class="page-host" data-bind="router: {transition: 'entrance', cacheViews: false }"></div>
-        <div id="infobar" data-bind="infobarLevel: infobar.level">INFOBAR: <span data-bind="text: infobar.message"></span></div>
+        <!-- ko with: infobar -->
+        <div id="infobar" data-bind="infobarLevel: level, visible: visible">
+            INFOBAR: <span data-bind="text: message"></span>... <a href="#" data-bind="click: showMoreInfo">more info</a>
+            <a class="close" data-bind="click: hide">×</a>
+        </div>
+        <div data-bind="dialog: {
+                                    isOpen: moreInfoShown,
+                                    modal: true,
+                                    title: 'INFOBAR Dialog',
+                                    resizable: false }">            
+            <div data-bind="text: message"> </div>    
+        </div>
+        <!-- /ko -->
     </div>
     <div class="footer">The Footer</div>
 </div>
@@ -59,6 +71,7 @@
     #infobar {
         clear: both;
         float:none;
+        border: 1px solid;
     }
 
     .infobar_error {
