@@ -1,4 +1,5 @@
-﻿define(['plugins/router', 'durandal/app', 'i18next', 'jquery', 'infobar', 'knockout-jqueryui'], function (router, app, i18n, $, infobar, koJqUi) {
+﻿define(['plugins/router', 'durandal/app', 'i18next', 'jquery', 'infobar', 'knockout-jqueryui'],
+    function (router, app, i18n, $, infobar, koJqUi) {
     return {
         router: router,
         search: function () {
@@ -11,7 +12,7 @@
             document.cookie = 'lang=' + data;
             location.reload();
         },
-        infobar: infobar.Instance,
+        infobar: infobar.instance,
         logOff : function () {
             $.post("/Login/LogOff/", function () {
                 location.reload();
@@ -23,6 +24,11 @@
                 { route: 'perevorot', title: 'Perevorot', moduleId: 'viewmodels/perevorot', nav: true },
                 { route: 'Customer', title: 'Customer', moduleId: 'viewmodels/customer', nav: true }
             ]).buildNavigationModel();
+
+            router.on('router:navigation:complete', function() {
+                infobar.instance.hide();
+            });
+            
             return router.activate();
         }
     };

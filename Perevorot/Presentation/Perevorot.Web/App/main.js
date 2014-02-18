@@ -8,6 +8,7 @@
         'jquery-ui': '../Scripts/jquery-ui-1.10.3.min',
         'knockout': '../Scripts/knockout-3.0.0',
         'knockout-jqueryui': '../Scripts/knockout-jqueryui.min',
+        'ko.custom-bindings': 'utils/ko.custom-bindings',
         'i18next': '../Scripts/i18next.amd.withJQuery-1.7.1.min',
         'moment': '../Scripts/moment.min',
         'datatables': '../Scripts/DataTables-1.9.4/jquery.dataTables',
@@ -18,9 +19,9 @@
 });
 
 
-define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'durandal/binder', 'i18next'],
+define(['durandal/system', 'durandal/app', 'durandal/viewLocator', 'durandal/binder', 'i18next', 'ko.custom-bindings'],
 // ReSharper disable InconsistentNaming
-    function (system, app, viewLocator, binder, i18n) {
+    function (system, app, viewLocator, binder, i18n, koCustomBindings) {
 // ReSharper restore InconsistentNaming
     //>>excludeStart("build", true);
     //system.debug(true);

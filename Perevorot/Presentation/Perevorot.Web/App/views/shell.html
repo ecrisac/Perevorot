@@ -22,15 +22,21 @@
         <div class="page-host" data-bind="router: {transition: 'entrance', cacheViews: false }"></div>
         <!-- ko with: infobar -->
         <div id="infobar" data-bind="infobarLevel: level, visible: visible">
-            INFOBAR: <span data-bind="text: message"></span>... <a href="#" data-bind="click: showMoreInfo">more info</a>
+            <span data-bind="text: levelText"></span>: 
+            <span data-bind="truncatedText: message"></span> <a href="#" data-bind="click: showMoreInfo">more info</a>
             <a class="close" data-bind="click: hide">×</a>
         </div>
         <div data-bind="dialog: {
                                     isOpen: moreInfoShown,
                                     modal: true,
-                                    title: 'INFOBAR Dialog',
+                                    title: levelText,
                                     resizable: false }">            
-            <div data-bind="text: message"> </div>    
+            <div data-bind="text: message"> </div>
+            <br/>
+            <br/>
+            <input 
+                type='button'class="btn btn-sm btn-primary btn-block" 
+                data-bind="click: hideMoreInfo" value="CLOSE"/>    
         </div>
         <!-- /ko -->
     </div>

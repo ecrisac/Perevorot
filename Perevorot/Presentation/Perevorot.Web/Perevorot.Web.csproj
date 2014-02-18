@@ -167,6 +167,7 @@
     <Content Include="App\locales\ru\shell.txt" />
     <Content Include="App\locales\ru\welcome.txt" />
     <Content Include="App\main.js" />
+    <Content Include="App\utils\ko.custom-bindings.js" />
     <Content Include="App\viewmodels\Customer.js" />
     <Content Include="App\viewmodels\CustomerGrid.js" />
     <Content Include="App\viewmodels\infobar.js" />
