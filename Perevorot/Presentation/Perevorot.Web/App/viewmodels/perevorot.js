@@ -3,13 +3,13 @@
         var self = this;
         self.displayName = "Perevorot, a test page";
 
-        self.showTime = function () {
-            infobar.show(new Date(), "info");
-        }
+        self.showTime = function() {
+            infobar.showInfo(new Date().toDateString());
+        };
 
-        self.showError = function () {
-            infobar.show("Error message", "error");
-        }
+        self.showError = function() {
+            infobar.showError("Error message, yada yada yada bla bla bla yada yada yada bla bla bla yada yada yada bla bla bla yada yada yada bla bla bla");
+        };
     };
 
     //Note: This module exports a function. That means that you, the developer, can create multiple instances.
