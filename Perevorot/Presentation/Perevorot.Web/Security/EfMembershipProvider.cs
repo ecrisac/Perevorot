@@ -5,7 +5,6 @@ using System.Configuration.Provider;
 using System.Data.SqlTypes;
 using System.Linq;
 using System.Security.Cryptography;
-using System.ServiceModel.Channels;
 using System.Text;
 using System.Web.Configuration;
 using System.Web.Hosting;

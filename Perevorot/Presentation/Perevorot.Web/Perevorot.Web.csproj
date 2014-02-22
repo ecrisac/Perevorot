@@ -132,14 +132,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CustomAutorizeAttribute.cs" />
-    <Compile Include="CustomRoleProvider.cs" />
     <Compile Include="App_Start\JsonNetFormatter.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Configuration\JsonNetResult.cs" />
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="EfMembershipProvider.cs" />
     <Compile Include="Dtos\CustomersGridResponseModel.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
@@ -150,13 +148,15 @@
     <Compile Include="Helpers\JQueryDataTablesResponse.cs" />
     <Compile Include="Models\CustomerModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
-    <Compile Include="EfMembershipUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResourceLocator\ControllerInstaller.cs" />
     <Compile Include="ResourceLocator\IoC.cs" />
     <Compile Include="ResourceLocator\RepositoriesInstaller.cs" />
     <Compile Include="ResourceLocator\ServicesInstaller.cs" />
     <Compile Include="ResourceLocator\WindsorControllerFactory.cs" />
+    <Compile Include="Security\CustomRoleProvider.cs" />
+    <Compile Include="Security\EfMembershipProvider.cs" />
+    <Compile Include="Security\EfMembershipUser.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
