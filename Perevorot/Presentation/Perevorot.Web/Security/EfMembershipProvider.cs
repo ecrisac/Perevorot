@@ -5,6 +5,7 @@ using System.Configuration.Provider;
 using System.Data.SqlTypes;
 using System.Linq;
 using System.Security.Cryptography;
+using System.ServiceModel.Channels;
 using System.Text;
 using System.Web.Configuration;
 using System.Web.Hosting;
@@ -15,7 +16,7 @@ using Perevorot.Domain.Models.DomainEntities;
 using Perevorot.Web.ResourceLocator;
 using WebMatrix.WebData;
 
-namespace Perevorot.Web
+namespace Perevorot.Web.Security
 {
     public class EfMembershipProvider : ExtendedMembershipProvider
     {
@@ -901,11 +902,7 @@ namespace Perevorot.Web
                 throw;
             }
         }
-
-        //
-        // MembershipProvider.ValidateUser
-        //
-
+      
         public override bool ValidateUser(string username, string password)
         {
             bool isValid = false;
@@ -1363,6 +1360,7 @@ namespace Perevorot.Web
         public override DateTime GetLastPasswordFailureDate(string userName)
         {
             throw new NotImplementedException();
+
         }
     }
 }

@@ -7,7 +7,7 @@ using Perevorot.Domain.IRepositories;
 using Perevorot.Domain.Models.DomainEntities;
 using Perevorot.Web.ResourceLocator;
 
-namespace Perevorot.Web
+namespace Perevorot.Web.Security
 {
     public class CustomRoleProvider : RoleProvider
     {

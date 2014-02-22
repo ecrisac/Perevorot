@@ -21,7 +21,8 @@
             router.map([
                 { route: '', title: 'Welcome', moduleId: 'viewmodels/welcome', nav: true },
                 { route: 'perevorot', title: 'Perevorot', moduleId: 'viewmodels/perevorot', nav: true },
-                { route: 'Customer', title: 'Customer', moduleId: 'viewmodels/customer', nav: true }
+                { route: 'Customer', title: 'Customer', moduleId: 'viewmodels/customer', nav: true },
+                { route: 'Registration', title: 'Registration', moduleId: 'viewmodels/registration', nav: true }
             ]).buildNavigationModel();
             return router.activate();
         }

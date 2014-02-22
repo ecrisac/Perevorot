@@ -2,13 +2,12 @@
     <div class="well">
         <input 
             type='button'class="btn btn-sm btn-primary" 
-            data-bind="click: OpenAddCustomerDialog, disable: isOpen" value="Create New Customer"/>
-              
-        <div data-bind="dialog: {
-                                    isOpen: isOpen,
-                                    modal: true,
-                                    title: 'Add A Customer',
-                                    resizable: false }">            
+            data-bind="click: openRegistrationDialog, disable: isOpen" value="Create new user"/>
+              <!-- add users grid here -->
+        <div data-bind="dialog: {isOpen: isOpen,
+                             modal: true,
+                             title: 'Add a User',
+                             resizable: false }">            
             <div class="form-group">
                 <label class="control-label" for="my-number">User Name:</label>                
                 <input id="my-number" class="form-control"  data-bind="value: userName" type="text"/>
@@ -17,9 +16,7 @@
             </div>    
             <input 
                 type='button'class="btn btn-sm btn-primary btn-block" 
-                data-bind="click: SaveCustomer" value="Create Customer"/>
+                data-bind="click: saveUser" value="Create user"/>
         </div>
     </div>
-       
-    <div data-bind="compose: 'viewmodels/CustomerGrid' "> </div>
 </section>

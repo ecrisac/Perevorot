@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web.Security;
 
-namespace Perevorot.Web
+namespace Perevorot.Web.Security
 {
     public class EfMembershipUser : MembershipUser
     {
